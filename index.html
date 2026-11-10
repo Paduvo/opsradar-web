@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -39,9 +38,98 @@
       background: linear-gradient(180deg, rgba(17, 24, 39, 0.92) 0%, rgba(11, 16, 27, 0.96) 100%);
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
     }
+    /* Executive Soft Stone & Slate Light Theme (Anti-Glare, Harmonious & Professional) */
+    html:not(.dark) body {
+      background: linear-gradient(145deg, #DCE3EC 0%, #E4EAF2 50%, #D8E0EB 100%) !important;
+      color: #0F172A !important;
+    }
+    html:not(.dark) header {
+      background: rgba(238, 242, 247, 0.94) !important;
+      border-bottom-color: #CBD5E1 !important;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+    }
+    html:not(.dark) #mainSidebar {
+      background: linear-gradient(180deg, #EEF2F7 0%, #E5EBF3 100%) !important;
+      border-right-color: #CBD5E1 !important;
+    }
     html:not(.dark) .enterprise-card {
-      background: #ffffff;
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+      background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important;
+      border-color: #CBD5E1 !important;
+      box-shadow: 0 2px 6px -1px rgba(15, 23, 42, 0.07), 0 1px 2px -1px rgba(15, 23, 42, 0.04), inset 0 1px 0 #FFFFFF !important;
+    }
+    html:not(.dark) .enterprise-card:hover {
+      border-color: #94A3B8 !important;
+      box-shadow: 0 6px 14px -3px rgba(15, 23, 42, 0.1), inset 0 1px 0 #FFFFFF !important;
+    }
+    html:not(.dark) input:not([type="checkbox"]),
+    html:not(.dark) select,
+    html:not(.dark) textarea {
+      background-color: #E6ECF4 !important;
+      border-color: #CBD5E1 !important;
+      color: #0F172A !important;
+    }
+    html:not(.dark) input::placeholder,
+    html:not(.dark) textarea::placeholder {
+      color: #64748B !important;
+    }
+    html:not(.dark) input:focus,
+    html:not(.dark) select:focus,
+    html:not(.dark) textarea:focus {
+      background-color: #F8FAFC !important;
+      border-color: #2563EB !important;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+    }
+    /* Deepen accent colors in Light Mode for razor-sharp readability */
+    html:not(.dark) .text-emerald-400,
+    html:not(.dark) .text-emerald-300 {
+      color: #047857 !important;
+    }
+    html:not(.dark) .text-blue-400,
+    html:not(.dark) .text-blue-300 {
+      color: #1D4ED8 !important;
+    }
+    html:not(.dark) .text-cyan-400 {
+      color: #0E7490 !important;
+    }
+    html:not(.dark) .text-indigo-400 {
+      color: #4338CA !important;
+    }
+    html:not(.dark) .text-amber-400,
+    html:not(.dark) .text-amber-300 {
+      color: #B45309 !important;
+    }
+    html:not(.dark) .text-slate-400 {
+      color: #475569 !important;
+    }
+    html:not(.dark) .text-slate-300 {
+      color: #334155 !important;
+    }
+    /* Harmonize NFC Wells & Modals in Light Mode */
+    html:not(.dark) .bg-slate-950 {
+      background: linear-gradient(180deg, #E2E8F0 0%, #D8E1EC 100%) !important;
+      border-color: #94A3B8 !important;
+      color: #0F172A !important;
+    }
+    html:not(.dark) .bg-slate-950 .text-white,
+    html:not(.dark) .bg-slate-950 .text-slate-200 {
+      color: #0F172A !important;
+    }
+    html:not(.dark) #modalNewCautela > div,
+    html:not(.dark) #modalNewEquip > div,
+    html:not(.dark) #modalNewOs > div,
+    html:not(.dark) #modalEquipDetail > div,
+    html:not(.dark) #modalBulkImport > div {
+      background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F7 100%) !important;
+      border-color: #CBD5E1 !important;
+      color: #0F172A !important;
+      box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.25) !important;
+    }
+    html:not(.dark) table thead tr {
+      background-color: #E6ECF4 !important;
+      border-bottom-color: #CBD5E1 !important;
+    }
+    html:not(.dark) table tbody tr:hover {
+      background-color: #EBF0F7 !important;
     }
     @keyframes scanlineMove {
       0%, 100% { transform: translateY(0%); opacity: 0.85; }
@@ -176,7 +264,7 @@
             <button type="button" data-tab="scanner" class="nav-tab-btn w-full px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between transition">
               <span class="flex items-center gap-2.5">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7V5a2 2 0 012-2h2m10 0h2a2 2 0 012 2v2m0 10v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2m4-5h8"/></svg>
-                <span>Scanner & NFC</span>
+                <span>Central NFC</span>
               </span>
             </button>
           </div>
@@ -351,9 +439,9 @@
                 <div>
                   <div class="flex items-center gap-2">
                     <h2 class="text-sm font-bold text-slate-900 dark:text-white">Emitir Nova Cautela</h2>
-                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono-code font-semibold uppercase bg-blue-500/10 text-blue-400 border border-blue-500/20">Scanner + PDF</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono-code font-semibold uppercase bg-blue-500/10 text-blue-400 border border-blue-500/20">NFC + PDF</span>
                   </div>
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Ler as tags NFC ou QR dos equipamentos cadastrados direto na cautela e gerar o PDF assinado.</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Encostar o celular nas tags NFC dos equipamentos direto na cautela e gerar o PDF assinado.</p>
                 </div>
               </div>
               <svg class="w-4 h-4 text-slate-500 group-hover:text-blue-400 group-hover:translate-x-0.5 transition shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -367,10 +455,10 @@
                 </div>
                 <div>
                   <div class="flex items-center gap-2">
-                    <h2 class="text-sm font-bold text-slate-900 dark:text-white">Leitor Óptico & NFC</h2>
-                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono-code font-semibold uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">13.56 MHz / QR</span>
+                    <h2 class="text-sm font-bold text-slate-900 dark:text-white">Leitor NFC de Proximidade</h2>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono-code font-semibold uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">13.56 MHz NTAG213</span>
                   </div>
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Consultar ficha técnica de equipamento por aproximação NFC ou leitura de câmera.</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Identificar equipamento instantaneamente encostando o celular na tag NFC.</p>
                 </div>
               </div>
               <svg class="w-4 h-4 text-slate-500 group-hover:text-cyan-400 group-hover:translate-x-0.5 transition shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -771,26 +859,25 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="enterprise-card rounded-xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between">
                 <div class="flex items-center justify-between mb-3">
-                  <span class="text-xs font-bold uppercase tracking-wider font-mono-code text-slate-400">Leitor Óptico (QR / Código)</span>
+                  <span class="text-xs font-bold uppercase tracking-wider font-mono-code text-slate-400">Sensor de Proximidade NFC (13.56 MHz)</span>
                   <label class="flex items-center gap-1.5 text-[11px] text-slate-400 cursor-pointer">
                     <input id="chkSoundBeep" type="checkbox" checked class="rounded text-blue-600" />
                     <span>Sinal Sonoro</span>
                   </label>
                 </div>
                 <div id="cameraPreviewBox" class="rounded-lg bg-slate-950 border border-slate-800 h-52 flex flex-col items-center justify-center relative overflow-hidden p-4 text-center">
-                  <video id="scannerVideoEl" class="absolute inset-0 w-full h-full object-cover hidden" playsinline muted></video>
-                  <div class="w-40 h-36 border border-blue-500/40 rounded-lg relative pointer-events-none flex items-center justify-center">
-                    <div class="w-full h-0.5 bg-blue-500/70 absolute top-2 scan-laser"></div>
-                    <p id="cameraStatusText" class="text-[11px] text-slate-400 px-3">Câmera em espera</p>
+                  <video id="scannerVideoEl" class="hidden" playsinline muted></video>
+                  <div class="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center mb-3">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
                   </div>
+                  <p id="cameraStatusText" class="text-xs font-semibold text-slate-200 px-3">Aproxime o topo do celular na Tag NFC do equipamento</p>
+                  <span class="text-[10px] font-mono-code text-slate-500 mt-1">Leitura instantânea de UID e NDEF</span>
                 </div>
                 <div class="mt-3 flex gap-2">
-                  <button type="button" id="btnStartCameraScan" class="flex-1 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition">
-                    Iniciar Câmera
+                  <button type="button" id="btnSimulateOcrRead" class="flex-1 py-2.5 rounded-lg text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white transition">
+                    Ativar Leitura por Aproximação NFC
                   </button>
-                  <button type="button" id="btnSimulateOcrRead" class="px-3.5 py-2 rounded-lg text-xs font-semibold border border-slate-700 hover:bg-slate-800 transition">
-                    Ler Tag NFC
-                  </button>
+                  <button type="button" id="btnStartCameraScan" class="hidden"></button>
                 </div>
               </div>
 
@@ -886,9 +973,14 @@
               <span class="text-[10px] font-mono-code uppercase tracking-widest text-blue-500">Controle de Empréstimos</span>
               <h1 class="text-2xl font-extrabold tracking-tight">Cautelas por Militar</h1>
             </div>
-            <button type="button" id="btnOpenNewCautelaModal" class="px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition">
-              + Nova Cautela
-            </button>
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" id="btnNfcQuickReturnCautela" class="px-3.5 py-2 rounded-lg text-xs font-semibold border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-600 hover:text-white transition">
+                Devolução por Toque NFC
+              </button>
+              <button type="button" id="btnOpenNewCautelaModal" class="px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition">
+                + Nova Cautela
+              </button>
+            </div>
           </div>
 
           <div class="enterprise-card rounded-xl border border-slate-200 dark:border-slate-800 p-3">
@@ -1113,22 +1205,19 @@
         <input id="cautelaIssuer" type="text" value="" placeholder="Responsável pela entrega (Seção)" class="bg-slate-50 dark:bg-[#070A12] border border-slate-200 dark:border-slate-800 rounded-lg px-2.5 py-2 text-xs font-mono-code" />
       </div>
 
-      <!-- SCANNER INTEGRADO NA CAUTELA -->
+      <!-- LEITOR NFC DIRETO NA CAUTELA (100% NFC, SEM QR CODE) -->
       <div class="rounded-xl bg-slate-950 border border-blue-500/30 p-3.5 space-y-3">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span class="text-xs font-semibold text-white">Leitor Direto na Cautela (Ler NFC / Câmera / Código)</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-xs font-semibold text-white">Leitor NFC Direto na Cautela (Encoste nos equipamentos para incluir)</span>
           </div>
           <div class="flex items-center gap-1.5">
-            <button type="button" id="btnCautelaToggleCamera" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7V5a2 2 0 012-2h2m10 0h2a2 2 0 012 2v2m0 10v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2m4-5h8"/></svg>
-              <span>Ativar Scanner Câmera</span>
+            <button type="button" id="btnCautelaSimScan" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0"/></svg>
+              <span>Aproximar & Ler Tag NFC</span>
             </button>
-            <button type="button" id="btnCautelaSimScan" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-200 transition">
-              <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-              <span>Ler Tag NFC</span>
-            </button>
+            <button type="button" id="btnCautelaToggleCamera" class="hidden"></button>
           </div>
         </div>
 
@@ -1142,7 +1231,7 @@
         </div>
 
         <div class="flex gap-1.5">
-          <input id="modalFastCodeInput" type="text" value="" placeholder="Aproxime a tag NFC, escaneie pela câmera ou digite o código (ex: CP-01, BLD-01)..." class="flex-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white font-mono-code focus:outline-none focus:border-blue-500" />
+          <input id="modalFastCodeInput" type="text" value="" placeholder="Aproxime a tag NFC acima ou digite o código / intervalo (ex: CP-01, BLD-01, BT01-05)..." class="flex-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white font-mono-code focus:outline-none focus:border-blue-500" />
           <button type="button" id="btnModalAddFastCode" class="px-3.5 py-2 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white">
             Incluir
           </button>
@@ -1520,6 +1609,34 @@
             },
             body: JSON.stringify({ id: '3gdaae_main', payload: db, updated_at: new Date().toISOString() })
           });
+          const lbl = document.getElementById('sidebarSyncStatusLabel');
+          if (lbl) lbl.textContent = 'NUVEM OK';
+        } catch (e) {}
+      }
+
+      async function pullFromSupabaseCloud() {
+        if (!db.supabaseUrl || !db.supabaseKey) return;
+        try {
+          const endpoint = db.supabaseUrl.replace(/\/$/, '') + '/rest/v1/opsradar_sync?id=eq.3gdaae_main&select=payload';
+          const res = await fetch(endpoint, {
+            headers: {
+              'apikey': db.supabaseKey,
+              'Authorization': 'Bearer ' + db.supabaseKey
+            }
+          });
+          if (res.ok) {
+            const rows = await res.json();
+            if (rows && rows.length > 0 && rows[0].payload && Array.isArray(rows[0].payload.items)) {
+              const cloudDb = rows[0].payload;
+              cloudDb.supabaseUrl = db.supabaseUrl;
+              cloudDb.supabaseKey = db.supabaseKey;
+              db = cloudDb;
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+              renderAll();
+              const lbl = document.getElementById('sidebarSyncStatusLabel');
+              if (lbl) lbl.textContent = 'NUVEM OK';
+            }
+          }
         } catch (e) {}
       }
 
@@ -2364,9 +2481,17 @@
           document.getElementById('sidebarBackdrop').classList.add('hidden');
         });
 
+        try {
+          const savedTheme = localStorage.getItem('opsradar_theme_pref');
+          if (savedTheme === 'light') document.documentElement.classList.remove('dark');
+          else if (savedTheme === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
+
         document.getElementById('btnToggleTheme').addEventListener('click', () => {
-          document.documentElement.classList.toggle('dark');
+          const isDarkNow = document.documentElement.classList.toggle('dark');
+          try { localStorage.setItem('opsradar_theme_pref', isDarkNow ? 'dark' : 'light'); } catch (e) {}
           renderAll();
+          showToast(isDarkNow ? 'Tema Escuro Tático ativado' : 'Tema Claro Executivo (Soft Slate) ativado');
         });
         document.getElementById('btnHeaderBasket').addEventListener('click', () => openNewCautelaModalWithCodes([]));
         document.getElementById('btnHeaderNewCautela').addEventListener('click', () => openNewCautelaModalWithCodes([]));
@@ -3025,6 +3150,68 @@
           }
         }
         window.addEventListener('hashchange', handleHashDeepLinkScan);
+        document.getElementById('btnNfcQuickReturnCautela').addEventListener('click', async () => {
+          const nowStr = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit' }) + ' ' + new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+          function returnEquipmentByCodeOrUid(token) {
+            const cleaned = token.replace(/^OPSRADAR:/i, '').replace(/.*#SCAN=/i, '').trim().toUpperCase();
+            let returnedCode = null;
+            db.cautelas.forEach(c => {
+              if (c.status !== 'ATIVA') return;
+              c.items.forEach(it => {
+                const eq = db.items.find(x => x.code === it.code);
+                const matchUid = eq && eq.nfcUid && eq.nfcUid.toUpperCase() === cleaned;
+                if (it.status !== 'DEVOLVIDA' && (it.code.toUpperCase() === cleaned || matchUid)) {
+                  it.status = 'DEVOLVIDA';
+                  it.returnedAt = nowStr;
+                  if (eq) { eq.status = 'DISPONIVEL'; eq.holder = null; }
+                  returnedCode = it.code;
+                }
+              });
+              if (c.items.every(x => x.status === 'DEVOLVIDA')) {
+                c.status = 'DEVOLVIDA';
+                c.returnedAt = nowStr;
+              }
+            });
+            if (returnedCode) {
+              playScannerBeep();
+              addLog('DEVOLUÇÃO NFC', `${returnedCode} restituído via toque NFC`);
+              saveDatabase();
+              renderAll();
+              showToast(`Devolução registrada via NFC: ${returnedCode}`);
+            } else {
+              showToast('Nenhum item ativo em cautela com essa tag.');
+            }
+          }
+
+          if ('NDEFReader' in window) {
+            try {
+              const ndef = new window.NDEFReader();
+              await ndef.scan();
+              showToast('Modo Devolução NFC ativo: aproxime os equipamentos que voltaram da missão...');
+              ndef.onreading = (ev) => {
+                const dec = new TextDecoder();
+                for (const rec of ev.message.records) {
+                  returnEquipmentByCodeOrUid(dec.decode(rec.data));
+                }
+                if (ev.serialNumber) returnEquipmentByCodeOrUid(ev.serialNumber);
+              };
+              return;
+            } catch (e) {}
+          }
+          const activeCautela = db.cautelas.find(c => c.status === 'ATIVA');
+          const activeItem = activeCautela && activeCautela.items.find(i => i.status !== 'DEVOLVIDA');
+          if (activeItem) {
+            returnEquipmentByCodeOrUid(activeItem.code);
+          } else {
+            showToast('Aproxime a tag NFC de um equipamento em cautela para dar baixa automática.');
+          }
+        });
+
+        if (db.supabaseUrl) {
+          document.getElementById('inputSupabaseUrl').value = db.supabaseUrl;
+          document.getElementById('inputSupabaseKey').value = db.supabaseKey || '';
+          pullFromSupabaseCloud();
+        }
         switchTab('campo');
         handleHashDeepLinkScan();
       });
