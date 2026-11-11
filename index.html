@@ -261,6 +261,14 @@
               <span id="badgeActiveCautelas" class="px-1.5 py-0.5 rounded text-[10px] font-mono-code bg-blue-500/15 text-blue-400">0</span>
             </button>
 
+            <button type="button" data-tab="auditoria" class="nav-tab-btn w-full px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between transition">
+              <span class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                <span>Bate-Estante (Auditoria)</span>
+              </span>
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-mono-code bg-emerald-500/15 text-emerald-400 font-bold">NFC</span>
+            </button>
+
             <button type="button" data-tab="scanner" class="nav-tab-btn w-full px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between transition">
               <span class="flex items-center gap-2.5">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7V5a2 2 0 012-2h2m10 0h2a2 2 0 012 2v2m0 10v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2m4-5h8"/></svg>
@@ -339,7 +347,7 @@
 
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-1 h-full overflow-y-auto px-4 sm:px-8 py-6">
-      <div class="max-w-6xl mx-auto space-y-6 pb-16">
+      <div class="max-w-6xl mx-auto space-y-6 pb-24 lg:pb-16">
 
         <!-- ==========================================
              1. CAMPO (ENTERPRISE COMMAND CENTER)
@@ -411,8 +419,26 @@
             </div>
           </div>
 
-          <!-- 4 Executive Action Modules -->
+          <!-- Operational Action Modules (Optimized for Mobile) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Dedicated Mobile Bate-Estante / Auditoria Card -->
+            <button type="button" id="cardQuickBateEstante" class="enterprise-card text-left group rounded-xl border border-emerald-500/40 hover:border-emerald-400 p-4 sm:p-5 flex items-start justify-between gap-4 transition col-span-1 sm:col-span-2 bg-gradient-to-r from-emerald-950/25 via-slate-900/60 to-slate-900/80 shadow-sm">
+              <div class="flex items-start gap-3.5">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition shadow-inner">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <h2 class="text-sm font-extrabold text-slate-900 dark:text-white">Bate-Estante & Auditoria Física NFC</h2>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-mono-code font-bold uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">Modo Celular</span>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Conferência física de carga por prateleira ou armário: encoste o celular nos equipamentos para identificar faltas e extravios na hora.</p>
+                </div>
+              </div>
+              <span class="hidden sm:inline-flex px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 group-hover:bg-emerald-500 group-hover:text-slate-950 transition whitespace-nowrap mt-1">
+                Abrir Auditoria →
+              </span>
+            </button>
             <!-- Module 1: Cadastro com Leitura NFC -->
             <button type="button" id="cardQuickContinuousRegister" class="enterprise-card text-left group rounded-xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/60 p-5 flex items-start justify-between gap-4 transition">
               <div class="flex items-start gap-4">
@@ -520,10 +546,15 @@
               <span class="text-[10px] font-mono-code uppercase tracking-widest text-blue-500">Centro de Operações</span>
               <h1 class="text-2xl font-extrabold tracking-tight">Painel Tático de Prontidão</h1>
             </div>
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-mono-code font-semibold">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              TELEMETRIA ATIVA
-            </span>
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" id="btnCopyShiftHandover" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0D1322] hover:border-blue-500/50 text-blue-400 transition">
+                Copiar Parte Diária / Passagem de Serviço
+              </button>
+              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-mono-code font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                TELEMETRIA ATIVA
+              </span>
+            </div>
           </div>
 
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
@@ -655,7 +686,7 @@
 
           <div class="enterprise-card rounded-xl border border-slate-200 dark:border-slate-800 p-3.5 space-y-3">
             <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5">
-              <div class="sm:col-span-5 relative">
+              <div class="sm:col-span-3 relative">
                 <input id="searchEquipInput" type="text" value="" placeholder="Pesquisar por ID patrimonial, número de série, UID NFC ou modelo..." class="w-full bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg pl-8 pr-3 py-2 text-xs focus:outline-none focus:border-blue-500" />
                 <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="M21 21l-4.35-4.35"/></svg>
               </div>
@@ -680,6 +711,11 @@
                   <option value="DISPONIVEL">Disponível</option>
                   <option value="EM_CAUTELA">Em Cautela</option>
                   <option value="MANUTENCAO">Manutenção</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <select id="filterEquipLocation" class="w-full bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2 text-xs">
+                  <option value="ALL">Todas as Prateleiras</option>
                 </select>
               </div>
               <div class="sm:col-span-2">
@@ -759,6 +795,9 @@
               <button type="button" data-scan-mode="write" class="scan-mode-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">
                 Fila de Gravação
               </button>
+              <button type="button" data-scan-mode="audit" class="scan-mode-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">
+                Auditoria de Estante
+              </button>
             </div>
           </div>
 
@@ -791,13 +830,11 @@
               </div>
 
               <div>
-                <label class="block text-[11px] font-semibold text-slate-400 mb-1">2. Alocação Física / Prateleira *</label>
+                <div class="flex items-center justify-between mb-1">
+                  <label class="block text-[11px] font-semibold text-slate-400">2. Alocação Física / Prateleira *</label>
+                  <button type="button" class="btn-trigger-manage-locations text-[10px] font-semibold text-blue-400 hover:underline">+ Gerenciar Locais</button>
+                </div>
                 <select id="contRegLocationSelect" class="w-full bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2.5 text-xs font-semibold focus:border-blue-500 focus:outline-none">
-                  <option value="Armário Tático 01">Armário Tático 01 (Rádios)</option>
-                  <option value="Bancada de Carga">Bancada de Carga (Baterias & Carregadores)</option>
-                  <option value="Prateleira 4">Prateleira 4 (Antenas, Cabos & Adaptadores)</option>
-                  <option value="Prateleira 5">Prateleira 5 (Bases & Amplificadores)</option>
-                  <option value="Laboratório RF">Laboratório de Manutenção RF</option>
                 </select>
               </div>
 
@@ -957,6 +994,53 @@
             </div>
           </div>
 
+          <!-- MODE 4: AUDITORIA DE ESTANTE / BATE-ESTANTE VIA NFC -->
+          <div id="shelfAuditPanel" class="hidden enterprise-card rounded-xl border border-slate-200 dark:border-slate-800 p-5 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+              <div>
+                <h2 class="text-sm font-bold">Auditoria Física de Estante via NFC (Conferência de Carga)</h2>
+                <p class="text-xs text-slate-400 mt-0.5">Selecione a prateleira/armário e aproxime o celular nas tags NFC dos materiais presentes para identificar faltas ou extravios.</p>
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                <select id="auditLocationSelect" class="bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2 text-xs font-semibold">
+                  <option value="ALL">Todas as Alocações da Seção</option>
+                  <option value="Armário Tático 01">Armário Tático 01 (Rádios)</option>
+                  <option value="Bancada de Carga">Bancada de Carga (Baterias & Carregadores)</option>
+                  <option value="Prateleira 4">Prateleira 4 (Antenas, Cabos & Adaptadores)</option>
+                  <option value="Prateleira 5">Prateleira 5 (Bases & Amplificadores)</option>
+                  <option value="Laboratório RF">Laboratório de Manutenção RF</option>
+                </select>
+                <button type="button" id="btnResetShelfAudit" class="px-3 py-2 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition">
+                  Reiniciar Conferência
+                </button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3">
+              <div class="rounded-lg bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 p-3">
+                <span class="text-[10px] font-mono-code uppercase text-slate-400">Conferidos na Estante</span>
+                <div id="auditVerifiedCount" class="text-xl font-extrabold font-mono-code text-emerald-400 mt-0.5">0</div>
+              </div>
+              <div class="rounded-lg bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 p-3">
+                <span class="text-[10px] font-mono-code uppercase text-slate-400">Justificados (Missão/OS)</span>
+                <div id="auditJustifiedCount" class="text-xl font-extrabold font-mono-code text-blue-400 mt-0.5">0</div>
+              </div>
+              <div class="rounded-lg bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 p-3">
+                <span class="text-[10px] font-mono-code uppercase text-slate-400">Pendentes de Leitura</span>
+                <div id="auditMissingCount" class="text-xl font-extrabold font-mono-code text-amber-400 mt-0.5">0</div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-2">
+              <input id="auditFastScanInput" type="text" value="" placeholder="Aproxime a tag NFC ou digite o ID / UID para marcar como conferido na estante..." class="flex-1 bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2 text-xs font-mono-code focus:outline-none focus:border-blue-500" />
+              <button type="button" id="btnAuditNfcTapNow" class="px-4 py-2 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition">
+                Ler Tag NFC na Estante
+              </button>
+            </div>
+
+            <div id="auditItemsListContainer" class="divide-y divide-slate-200 dark:divide-slate-800 rounded-lg border border-slate-200 dark:border-slate-800 max-h-64 overflow-y-auto text-xs"></div>
+          </div>
+
           <div class="hidden">
             <textarea id="batchCodeTextarea"></textarea>
             <button type="button" id="btnVoiceDictateCodes"></button>
@@ -992,6 +1076,104 @@
           </div>
 
           <div id="cautelasListContainer" class="space-y-3"></div>
+        </section>
+
+        <!-- ==========================================
+             5.1 BATE-ESTANTE & AUDITORIA FÍSICA NFC (OTIMIZADO P/ CELULAR)
+             ========================================== -->
+        <section id="tab-auditoria" class="tab-panel hidden space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-200 dark:border-slate-800/80">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-mono-code uppercase tracking-widest text-emerald-400">Conferência Física de Carga</span>
+                <span class="text-slate-600">•</span>
+                <span class="text-[10px] font-mono-code text-slate-400">3º GDAAE</span>
+              </div>
+              <h1 class="text-2xl font-extrabold tracking-tight mt-0.5">Bate-Estante (Auditoria NFC)</h1>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" class="btn-trigger-manage-locations px-3 py-2 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0D1322] hover:border-blue-500/50 text-blue-400 transition">
+                Gerenciar Locais & Prateleiras
+              </button>
+              <button type="button" id="btnAuditResetNow" class="px-3 py-2 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-800 hover:border-slate-700 transition">
+                Reiniciar Conferência
+              </button>
+            </div>
+          </div>
+
+          <!-- Shelf Selector Card -->
+          <div class="enterprise-card rounded-xl border border-slate-200 dark:border-slate-800 p-4 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono-code">Prateleira ou Armário a Conferir:</label>
+              <span id="auditSelectedLocCount" class="text-xs font-mono-code text-blue-400">0 itens cadastrados nesta alocação</span>
+            </div>
+            <div class="flex gap-2">
+              <select id="auditLocationSelectMain" class="flex-1 bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2.5 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
+              </select>
+              <button type="button" class="btn-trigger-manage-locations px-3 py-2.5 rounded-lg text-xs font-bold bg-blue-600/15 border border-blue-500/30 text-blue-400 hover:bg-blue-600 hover:text-white transition whitespace-nowrap">
+                + Novo Local
+              </button>
+            </div>
+          </div>
+
+          <!-- 3 Big Mobile Touch Counters -->
+          <div class="grid grid-cols-3 gap-2.5 sm:gap-3">
+            <div class="enterprise-card rounded-xl border border-emerald-500/30 p-3 sm:p-4 text-center">
+              <span class="text-[9px] sm:text-[10px] font-mono-code uppercase text-emerald-400 font-bold block">Conferidos</span>
+              <div id="auditBigCountVerified" class="text-2xl sm:text-3xl font-extrabold font-mono-code text-emerald-400 mt-1">0</div>
+              <span class="text-[10px] text-slate-400 hidden sm:inline">Na estante via NFC</span>
+            </div>
+
+            <div class="enterprise-card rounded-xl border border-blue-500/30 p-3 sm:p-4 text-center">
+              <span class="text-[9px] sm:text-[10px] font-mono-code uppercase text-blue-400 font-bold block">Justificados</span>
+              <div id="auditBigCountJustified" class="text-2xl sm:text-3xl font-extrabold font-mono-code text-blue-400 mt-1">0</div>
+              <span class="text-[10px] text-slate-400 hidden sm:inline">Em Missão / Manut.</span>
+            </div>
+
+            <div class="enterprise-card rounded-xl border border-rose-500/40 p-3 sm:p-4 text-center bg-rose-500/5">
+              <span class="text-[9px] sm:text-[10px] font-mono-code uppercase text-rose-400 font-bold block">Pendentes</span>
+              <div id="auditBigCountMissing" class="text-2xl sm:text-3xl font-extrabold font-mono-code text-rose-400 mt-1">0</div>
+              <span class="text-[10px] text-slate-400 hidden sm:inline">Falta bipar</span>
+            </div>
+          </div>
+
+          <!-- Big NFC Touch Action for Mobile Smartphone -->
+          <div class="rounded-xl bg-slate-950 border border-emerald-500/40 p-4 space-y-3">
+            <button type="button" id="btnBigMobileNfcScan" class="w-full py-4 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm sm:text-base flex items-center justify-center gap-3 shadow-lg shadow-emerald-500/20 active:scale-[0.98] transition">
+              <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+              <span>TOCAR TAG NFC NA ESTANTE</span>
+            </button>
+            <p class="text-center text-[11px] text-slate-400">
+              No celular, toque o botão acima e encoste a traseira do telefone na tag NFC do equipamento para conferir.
+            </p>
+
+            <div class="flex gap-2 pt-1">
+              <input id="auditManualInputBox" type="text" value="" placeholder="Ou digite o ID / UID patrimonial (ex: CP-01, BLD-02)..." class="flex-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs font-mono-code text-white focus:outline-none focus:border-emerald-500" />
+              <button type="button" id="btnAuditManualSubmit" class="px-4 py-2 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white whitespace-nowrap">
+                Bipar
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="inline-flex p-1 rounded-lg bg-white dark:bg-[#0D1322] border border-slate-200 dark:border-slate-800">
+              <button type="button" data-audit-filter="ALL" class="audit-filter-pill px-3 py-1.5 rounded-md text-xs font-semibold bg-blue-600 text-white transition">Todos (<span id="pillCountAll">0</span>)</button>
+              <button type="button" data-audit-filter="MISSING" class="audit-filter-pill px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">Pendentes (<span id="pillCountMissing">0</span>)</button>
+              <button type="button" data-audit-filter="VERIFIED" class="audit-filter-pill px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">Conferidos (<span id="pillCountVerified">0</span>)</button>
+              <button type="button" data-audit-filter="JUSTIFIED" class="audit-filter-pill px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">Em Missão (<span id="pillCountJustified">0</span>)</button>
+            </div>
+
+            <button type="button" id="btnCopyAuditWhatsappReport" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/15 transition flex items-center gap-1.5">
+              <span>Copiar Relatório de Faltas (WhatsApp)</span>
+            </button>
+          </div>
+
+          <!-- Items List (Mobile Cards) -->
+          <div class="enterprise-card rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+            <div id="auditCardsList" class="divide-y divide-slate-200 dark:divide-slate-800 max-h-[500px] overflow-y-auto">
+            </div>
+          </div>
         </section>
 
         <!-- ==========================================
@@ -1338,13 +1520,11 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           <div>
-            <label class="block text-[11px] font-semibold text-slate-400 mb-1">Alocação Física / Prateleira</label>
+            <div class="flex items-center justify-between mb-1">
+              <label class="block text-[11px] font-semibold text-slate-400">Alocação Física / Prateleira</label>
+              <button type="button" class="btn-trigger-manage-locations text-[10px] font-semibold text-blue-400 hover:underline">+ Gerenciar</button>
+            </div>
             <select id="newEquipLocation" class="w-full bg-slate-50 dark:bg-[#070A12] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2">
-              <option value="Armário Tático 01">Armário Tático 01</option>
-              <option value="Bancada de Carga">Bancada de Carga</option>
-              <option value="Prateleira 4">Prateleira 4</option>
-              <option value="Prateleira 5">Prateleira 5</option>
-              <option value="Laboratório RF">Laboratório RF</option>
             </select>
           </div>
           <div>
@@ -1472,6 +1652,48 @@
     </div>
   </div>
 
+    <!-- ==========================================
+       MODAL: GERENCIAMENTO DE LOCAIS & PRATELEIRAS
+       ========================================== -->
+  <div id="modalManageLocations" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-4 overflow-y-auto no-print">
+    <div class="bg-white dark:bg-[#0B101B] border border-slate-200 dark:border-slate-800 rounded-xl max-w-md w-full p-5 shadow-2xl space-y-4 my-6">
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div>
+          <span class="text-[10px] font-mono-code uppercase tracking-wider text-blue-400">Logística & Armazenamento</span>
+          <h2 class="text-base font-extrabold text-slate-900 dark:text-white">Locais & Prateleiras</h2>
+        </div>
+        <button type="button" id="btnCloseManageLocationsModal" class="p-1 rounded-lg text-slate-400 hover:text-white" aria-label="Fechar">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <p class="text-xs text-slate-400">Cadastre novas prateleiras, armários ou caixas de transporte. Você pode editar o nome ou excluir locais existentes.</p>
+
+      <!-- Cadastro de Novo Local -->
+      <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#070A12] border border-slate-200 dark:border-slate-800 space-y-2">
+        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300">Adicionar Novo Local / Prateleira</label>
+        <div class="flex gap-2">
+          <input id="inputNewLocationName" type="text" value="" placeholder="Ex: Prateleira 6, Caixa Tática 02..." class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-blue-500" />
+          <button type="button" id="btnAddLocationSubmit" class="px-3.5 py-2 rounded-lg text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white whitespace-nowrap transition">
+            + Adicionar
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de Locais -->
+      <div class="space-y-1.5">
+        <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Locais Atuais na Seção</span>
+        <div id="locationsManagerList" class="divide-y divide-slate-200 dark:divide-slate-800 rounded-lg border border-slate-200 dark:border-slate-800 max-h-56 overflow-y-auto bg-slate-50/50 dark:bg-[#070A12]"></div>
+      </div>
+
+      <div class="flex justify-end pt-2 border-t border-slate-200 dark:border-slate-800">
+        <button type="button" id="btnDoneManageLocations" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-white transition">
+          Concluído
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL 8: BLOQUEIO PIN -->
   <div id="modalPinGate" class="fixed inset-0 z-50 bg-[#050811]/95 backdrop-blur-md hidden items-center justify-center p-4 no-print">
     <div class="bg-[#0B101B] border border-slate-800 rounded-xl max-w-xs w-full p-6 text-center space-y-4">
@@ -1506,6 +1728,7 @@
       let conveyorSkippedCodes = new Set();
       let contRegSessionItems = [];
       let autoNfcListening = false;
+      let auditedShelfCodes = new Set();
 
       let categoryChartInstance = null;
       let donutChartInstance = null;
@@ -1562,10 +1785,19 @@
       }
 
       // 100% ZEROED INITIAL DATABASE AS REQUESTED BY USER!
+      const DEFAULT_LOCATIONS = [
+        'Armário Tático 01',
+        'Bancada de Carga',
+        'Prateleira 4',
+        'Prateleira 5',
+        'Laboratório RF'
+      ];
+
       function buildCleanDatabase() {
         return {
           items: [],
           users: [],
+          locations: [...DEFAULT_LOCATIONS],
           cautelas: [],
           maintenanceOrders: [],
           alerts: [],
@@ -1583,7 +1815,12 @@
           const raw = localStorage.getItem(STORAGE_KEY);
           if (raw) {
             const p = JSON.parse(raw);
-            if (p && Array.isArray(p.items)) return p;
+            if (p && Array.isArray(p.items)) {
+              if (!p.locations || !Array.isArray(p.locations) || p.locations.length === 0) {
+                p.locations = [...DEFAULT_LOCATIONS];
+              }
+              return p;
+            }
           }
         } catch (e) {}
         return buildCleanDatabase();
@@ -1707,8 +1944,19 @@
             ? 'nav-tab-btn w-full px-3 py-2 rounded-lg text-xs font-bold flex items-center justify-between transition bg-blue-600/15 text-blue-400 border border-blue-500/30'
             : 'nav-tab-btn w-full px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between transition text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-white';
         });
+        document.querySelectorAll('[data-mobile-tab]').forEach(btn => {
+          const isT = btn.getAttribute('data-mobile-tab') === tabId;
+          if (isT) {
+            btn.className = tabId === 'auditoria'
+              ? 'flex-1 py-1 flex flex-col items-center justify-center text-emerald-500 dark:text-emerald-400 font-bold transition'
+              : 'flex-1 py-1 flex flex-col items-center justify-center text-blue-500 dark:text-blue-400 font-bold transition';
+          } else {
+            btn.className = 'flex-1 py-1 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-blue-500 transition';
+          }
+        });
         document.getElementById('mainSidebar').classList.add('-translate-x-full');
         document.getElementById('sidebarBackdrop').classList.add('hidden');
+        if (tabId === 'auditoria') renderAuditoriaTab();
         renderAll();
       }
 
@@ -1716,6 +1964,9 @@
         document.getElementById('scanModeReadBox').classList.toggle('hidden', mode !== 'read');
         document.getElementById('continuousScanRegisterPanel').classList.toggle('hidden', mode !== 'register');
         document.getElementById('nfcConveyorPanel').classList.toggle('hidden', mode !== 'write');
+        const auditEl = document.getElementById('shelfAuditPanel');
+        if (auditEl) auditEl.classList.toggle('hidden', mode !== 'audit');
+        if (mode === 'audit') renderShelfAudit();
         document.querySelectorAll('.scan-mode-btn').forEach(btn => {
           const isM = btn.getAttribute('data-scan-mode') === mode;
           btn.className = isM
@@ -1867,11 +2118,14 @@
         const q = (document.getElementById('searchEquipInput').value || '').trim().toLowerCase();
         const catFilter = document.getElementById('filterEquipCategory').value;
         const stFilter = document.getElementById('filterEquipStatus').value;
+        const locFilterEl = document.getElementById('filterEquipLocation');
+        const locFilter = locFilterEl ? locFilterEl.value : 'ALL';
         const tbody = document.getElementById('equipTableBody');
 
         let filtered = db.items.filter(it => {
           if (catFilter !== 'ALL' && it.category !== catFilter) return false;
           if (stFilter !== 'ALL' && it.status !== stFilter) return false;
+          if (locFilter !== 'ALL' && (it.location || 'Seção') !== locFilter) return false;
           if (q && !(`${it.code} ${it.serial} ${it.nfcUid || ''} ${it.category} ${it.model} ${it.location || ''} ${it.holder || ''}`.toLowerCase().includes(q))) return false;
           return true;
         });
@@ -1931,6 +2185,7 @@
               <td class="py-2.5 px-3 font-mono-code text-[11px] text-slate-400 hidden md:table-cell">
                 <div>${it.serial}</div>
                 ${it.nfcUid ? `<div class="text-[10px] text-emerald-400">NFC: ${it.nfcUid}</div>` : ''}
+                ${it.category === 'Bateria' ? `<div class="text-[10px] text-cyan-400">Ciclos: ${it.cycles || 0} • Carga: ${it.lastChargedAt || 'Pendente'}</div>` : ''}
               </td>
               <td class="py-2.5 px-3 text-[11px] text-slate-400 hidden lg:table-cell">${it.location || 'Seção'}</td>
               <td class="py-2.5 px-3">
@@ -1941,6 +2196,11 @@
               </td>
               <td class="py-2.5 px-4 text-right whitespace-nowrap">
                 <div class="inline-flex items-center gap-1">
+                  ${it.category === 'Bateria' ? `
+                    <button type="button" data-action="charge-battery" data-code="${it.code}" class="px-2 py-1 rounded text-[10px] font-mono-code font-semibold bg-cyan-500/15 text-cyan-400 hover:bg-cyan-600 hover:text-white transition" title="Registrar recarga na bancada">
+                      + Carga
+                    </button>
+                  ` : ''}
                   ${it.status === 'DISPONIVEL' ? `
                     <button type="button" data-action="quick-cautelar-item" data-code="${it.code}" class="px-2.5 py-1 rounded text-[11px] font-semibold bg-blue-600/15 text-blue-400 hover:bg-blue-600 hover:text-white transition">
                       Cautelar
@@ -2089,6 +2349,25 @@
         document.getElementById('btnScanResultOpenOs').addEventListener('click', () => openNewOsModal(item.code));
       }
 
+      function computeCautelaSlaBadge(c, isAtiva) {
+        if (!isAtiva) {
+          return `<span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">CONCLUÍDA</span>`;
+        }
+        if (!c.dueDate) {
+          return `<span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">EM MISSÃO</span>`;
+        }
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const due = new Date(c.dueDate + 'T00:00:00');
+        const diffDays = Math.round((due - today) / 86400000);
+        if (diffDays < 0) {
+          return `<span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-rose-500/15 text-rose-400 border border-rose-500/30">ATRASADA (${Math.abs(diffDays)}d)</span>`;
+        } else if (diffDays === 0) {
+          return `<span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-amber-500/15 text-amber-400 border border-amber-500/30">VENCE HOJE</span>`;
+        }
+        return `<span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">PRAZO: ${c.dueDate.split('-').reverse().join('/')}</span>`;
+      }
+
       function renderCautelas() {
         const container = document.getElementById('cautelasListContainer');
         const f = document.getElementById('filterCautelaStatus').value;
@@ -2101,38 +2380,50 @@
           const actCount = c.items.filter(i => i.status !== 'DEVOLVIDA').length;
           const retCount = c.items.length - actCount;
           const isAtiva = actCount > 0;
+          const pctReturned = c.items.length > 0 ? Math.round((retCount / c.items.length) * 100) : 100;
+          const slaBadge = computeCautelaSlaBadge(c, isAtiva);
           return `
             <div class="enterprise-card rounded-xl border ${isAtiva ? 'border-blue-500/40' : 'border-slate-200 dark:border-slate-800'} overflow-hidden">
-              <div class="p-4 flex items-center justify-between gap-3 bg-slate-50/40 dark:bg-[#080C14]/60 border-b border-slate-200/60 dark:border-slate-800">
+              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/40 dark:bg-[#080C14]/60 border-b border-slate-200/60 dark:border-slate-800">
                 <div class="flex items-center gap-3">
                   <div class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-mono-code font-bold text-xs">
                     ${c.warName.slice(0, 2).toUpperCase()}
                   </div>
                   <div>
-                    <div class="flex items-center gap-2">
+                    <div class="flex flex-wrap items-center gap-2">
                       <h3 class="text-sm font-bold">${c.rank ? c.rank + ' ' : ''}${c.warName}</h3>
                       <span class="font-mono-code text-[11px] text-slate-400">${c.id}</span>
+                      ${slaBadge}
                     </div>
-                    <p class="text-[11px] text-slate-400">${actCount} em posse · ${retCount} restituídos • ${c.mission}</p>
+                    <p class="text-[11px] text-slate-400 mt-0.5">${actCount} pendentes · ${retCount}/${c.items.length} conferidos no retorno (${pctReturned}%) • ${c.mission}</p>
                   </div>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex flex-wrap gap-2">
+                  <button type="button" data-action="whatsapp-cautela" data-id="${c.id}" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/15 transition" title="Enviar comprovante ou cobrança via WhatsApp">
+                    Notificar WhatsApp
+                  </button>
                   <button type="button" data-action="view-pdf" data-id="${c.id}" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-700 hover:border-blue-500">Termo PDF</button>
                   ${isAtiva ? `<button type="button" data-action="return-cautela" data-id="${c.id}" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white">Receber Todos</button>` : ''}
                 </div>
+              </div>
+              <div class="w-full h-1 bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="h-full bg-emerald-500 transition-all duration-300" style="width: ${pctReturned}%"></div>
               </div>
               <div class="divide-y divide-slate-200/60 dark:divide-slate-800/60">
                 ${c.items.map((it, idx) => {
                   const ret = it.status === 'DEVOLVIDA';
                   return `
-                    <div class="px-4 py-3 flex items-center justify-between text-xs">
+                    <div class="px-4 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
                       <div>
                         <div class="font-mono-code font-bold text-sm">${it.code} <span class="text-slate-500">·</span> <span class="font-sans font-medium text-slate-400">${it.model || it.category}</span></div>
                         <div class="text-[11px] text-slate-400">Saída: ${it.withdrawnAt || c.createdAt} ${ret ? `· Devolução: ${it.returnedAt || c.returnedAt}` : ''}</div>
                       </div>
                       ${ret
-                        ? `<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[10px] font-mono-code font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>RESTITUÍDO</span>`
-                        : `<button type="button" data-action="return-single-item" data-cautela="${c.id}" data-idx="${idx}" class="px-2.5 py-1 rounded text-[10px] font-mono-code font-semibold bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-emerald-600 hover:text-white transition">RECEBER ITEM</button>`
+                        ? `<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[10px] font-mono-code font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>CONFERIDO NO RETORNO</span>`
+                        : `<div class="flex items-center gap-1.5">
+                            <button type="button" data-action="return-single-item" data-cautela="${c.id}" data-idx="${idx}" class="px-2.5 py-1 rounded text-[10px] font-mono-code font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600 hover:text-white transition">RECEBER OK (NFC)</button>
+                            <button type="button" data-action="return-damaged-item" data-cautela="${c.id}" data-idx="${idx}" class="px-2.5 py-1 rounded text-[10px] font-mono-code font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30 hover:bg-amber-600 hover:text-white transition" title="Dar baixa na cautela e enviar direto para Manutenção">RECEBER C/ AVARIA</button>
+                          </div>`
                       }
                     </div>
                   `;
@@ -2386,17 +2677,93 @@
         if (!it) return;
         document.getElementById('detailEquipTitle').textContent = `${it.code} • ${it.category}`;
         const nfcUrl = `https://ops.revacta.com.br/#scan=${encodeURIComponent(it.code)}`;
+        const pastLoans = db.cautelas.filter(c => c.items.some(x => x.code === it.code)).slice(0, 4);
+        const pastOs = db.maintenanceOrders.filter(o => o.equipCode === it.code).slice(0, 3);
         document.getElementById('detailEquipBody').innerHTML = `
           <div class="grid grid-cols-2 gap-2.5 p-3.5 rounded-lg bg-slate-50 dark:bg-[#070A12] border border-slate-200 dark:border-slate-800">
             <div><span class="text-slate-400 block text-[10px] uppercase font-mono-code">Nº de Série</span><strong class="font-mono-code">${it.serial}</strong></div>
-            <div><span class="text-slate-400 block text-[10px] uppercase font-mono-code">Alocação</span><strong>${it.location || 'Seção'}</strong></div>
+            <div><span class="text-slate-400 block text-[10px] uppercase font-mono-code">Alocação Física</span><strong>${it.location || 'Seção'}</strong></div>
             <div class="col-span-2"><span class="text-slate-400 block text-[10px] uppercase font-mono-code">Especificação</span><strong>${it.model}</strong></div>
+            ${it.category === 'Bateria' ? `
+              <div><span class="text-slate-400 block text-[10px] uppercase font-mono-code">Ciclos em Missão</span><strong class="font-mono-code text-cyan-400">${it.cycles || 0} missões</strong></div>
+              <div><span class="text-slate-400 block text-[10px] uppercase font-mono-code">Última Recarga</span><strong class="font-mono-code text-emerald-400">${it.lastChargedAt || 'Não registrada'}</strong></div>
+            ` : ''}
             ${it.nfcUid ? `<div class="col-span-2"><span class="text-slate-400 block text-[10px] uppercase font-mono-code">UID Chip NFC</span><strong class="font-mono-code text-emerald-400">${it.nfcUid}</strong></div>` : ''}
             <div class="col-span-2"><span class="text-slate-400 block text-[10px] uppercase font-mono-code">Deep-Link NFC</span><code class="text-[11px] font-mono-code text-blue-400 break-all">${nfcUrl}</code></div>
           </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] font-mono-code uppercase text-slate-400 block">Histórico Recente deste Equipamento</span>
+            ${pastLoans.length === 0 && pastOs.length === 0
+              ? `<div class="p-2.5 rounded bg-slate-50 dark:bg-[#070A12] border border-slate-200 dark:border-slate-800 text-[11px] text-slate-400">Nenhuma cautela ou OS anterior registrada para este item.</div>`
+              : `
+                <div class="space-y-1 max-h-28 overflow-y-auto">
+                  ${pastLoans.map(c => `<div class="px-2.5 py-1.5 rounded bg-slate-50 dark:bg-[#070A12] border border-slate-200 dark:border-slate-800 flex justify-between text-[11px]"><span><strong>${c.id}</strong> • ${c.rank || ''} ${c.warName} (${c.mission})</span><span class="font-mono-code text-slate-400">${c.createdAt}</span></div>`).join('')}
+                  ${pastOs.map(o => `<div class="px-2.5 py-1.5 rounded bg-amber-500/10 border border-amber-500/20 flex justify-between text-[11px] text-amber-300"><span><strong>${o.id}</strong> • ${o.description}</span><span class="font-mono-code">${o.status}</span></div>`).join('')}
+                </div>
+              `
+            }
+          </div>
+          <div class="flex flex-wrap justify-end gap-2 pt-2 border-t border-slate-200 dark:border-slate-800">
+            ${it.category === 'Bateria' ? `<button type="button" id="btnModalPassChargeBat" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-600 text-white">Registrar Carga Hoje</button>` : ''}
+            <button type="button" id="btnModalPassOpenOs" class="px-3 py-1.5 rounded-lg text-xs font-semibold border border-amber-500/40 text-amber-400">Abrir OS Técnica</button>
+            ${it.status === 'DISPONIVEL' ? `<button type="button" id="btnModalPassCautelar" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white">Cautelar Item</button>` : ''}
+          </div>
         `;
+        const bCaut = document.getElementById('btnModalPassCautelar');
+        if (bCaut) bCaut.onclick = () => { document.getElementById('modalEquipDetail').classList.add('hidden'); openNewCautelaModalWithCodes([it.code]); };
+        const bOs = document.getElementById('btnModalPassOpenOs');
+        if (bOs) bOs.onclick = () => { document.getElementById('modalEquipDetail').classList.add('hidden'); openNewOsModal(it.code); };
+        const bChg = document.getElementById('btnModalPassChargeBat');
+        if (bChg) bChg.onclick = () => {
+          it.lastChargedAt = new Date().toLocaleDateString('pt-BR');
+          addLog('RECARGA', `Bateria ${it.code} recarregada na bancada`);
+          saveDatabase();
+          renderAll();
+          inspectEquipmentModal(it.code);
+          showToast(`Recarga registrada para ${it.code}`);
+        };
         document.getElementById('modalEquipDetail').classList.remove('hidden');
         document.getElementById('modalEquipDetail').classList.add('flex');
+      }
+
+      function renderShelfAudit() {
+        const locSel = document.getElementById('auditLocationSelect');
+        const listEl = document.getElementById('auditItemsListContainer');
+        if (!locSel || !listEl) return;
+        const loc = locSel.value;
+        const expected = db.items.filter(i => loc === 'ALL' || (i.location || 'Seção') === loc);
+        let verified = 0, justified = 0, missing = 0;
+        expected.forEach(it => {
+          if (auditedShelfCodes.has(it.code)) verified++;
+          else if (it.status !== 'DISPONIVEL') justified++;
+          else missing++;
+        });
+        document.getElementById('auditVerifiedCount').textContent = verified;
+        document.getElementById('auditJustifiedCount').textContent = justified;
+        document.getElementById('auditMissingCount').textContent = missing;
+        if (expected.length === 0) {
+          listEl.innerHTML = `<div class="p-6 text-center text-slate-400">Nenhum equipamento alocado nesta prateleira ainda.</div>`;
+          return;
+        }
+        listEl.innerHTML = expected.map(it => {
+          const isVer = auditedShelfCodes.has(it.code);
+          const isJust = !isVer && it.status !== 'DISPONIVEL';
+          let badge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-semibold bg-amber-500/15 text-amber-400">PENDENTE NA ESTANTE</span>`;
+          if (isVer) badge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-semibold bg-emerald-500/15 text-emerald-400">CONFERIDO VIA NFC</span>`;
+          else if (isJust) badge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono-code font-semibold bg-blue-500/15 text-blue-400">JUSTIFICADO (${it.holder || it.status})</span>`;
+          return `
+            <div class="px-3.5 py-2.5 flex items-center justify-between">
+              <div>
+                <strong class="font-mono-code text-blue-400">${it.code}</strong> · <span class="font-semibold">${it.category}</span>
+                <span class="text-slate-400 ml-1">(${it.location || 'Seção'})</span>
+              </div>
+              <div class="flex items-center gap-2">
+                ${badge}
+                ${!isVer ? `<button type="button" data-audit-mark="${it.code}" class="px-2 py-0.5 rounded text-[10px] border border-slate-700 hover:border-emerald-500 text-slate-300">Conferir</button>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
       }
 
       // Unified helper to read/write NFC tag and register equipment with selected options
@@ -2454,13 +2821,310 @@
         return { code: finalCode, uid: detectedUid };
       }
 
+      // ==========================================
+      // LOCATIONS & SHELVES CRUD MANAGEMENT
+      // ==========================================
+      function renderLocationSelects() {
+        if (!db.locations || !Array.isArray(db.locations) || db.locations.length === 0) {
+          db.locations = [...DEFAULT_LOCATIONS];
+        }
+
+        const cReg = document.getElementById('contRegLocationSelect');
+        if (cReg) {
+          const curr = cReg.value;
+          cReg.innerHTML = db.locations.map(loc => `<option value="${loc}" ${loc === curr ? 'selected' : ''}>${loc}</option>`).join('');
+        }
+
+        const nEq = document.getElementById('newEquipLocation');
+        if (nEq) {
+          const curr = nEq.value;
+          nEq.innerHTML = db.locations.map(loc => `<option value="${loc}" ${loc === curr ? 'selected' : ''}>${loc}</option>`).join('');
+        }
+
+        const aLoc = document.getElementById('auditLocationSelectMain');
+        if (aLoc) {
+          const curr = aLoc.value || 'ALL';
+          aLoc.innerHTML = `<option value="ALL">Todas as Prateleiras da Seção</option>` +
+            db.locations.map(loc => `<option value="${loc}" ${loc === curr ? 'selected' : ''}>${loc}</option>`).join('');
+        }
+
+        const fEqLoc = document.getElementById('filterEquipLocation');
+        if (fEqLoc) {
+          const curr = fEqLoc.value || 'ALL';
+          fEqLoc.innerHTML = `<option value="ALL">Todas as Prateleiras</option>` +
+            db.locations.map(loc => `<option value="${loc}" ${loc === curr ? 'selected' : ''}>${loc}</option>`).join('');
+        }
+
+        renderLocationsManagerList();
+      }
+
+      let editingLocationName = null;
+      let confirmingDeleteLocationName = null;
+
+      function renderLocationsManagerList() {
+        const listEl = document.getElementById('locationsManagerList');
+        if (!listEl) return;
+        if (!db.locations || db.locations.length === 0) {
+          listEl.innerHTML = `<div class="p-3 text-center text-xs text-slate-400">Nenhum local cadastrado. Adicione um acima.</div>`;
+          return;
+        }
+        listEl.innerHTML = db.locations.map((loc) => {
+          const count = db.items.filter(i => (i.location || 'Seção') === loc).length;
+
+          if (editingLocationName === loc) {
+            return `
+              <div class="p-2.5 flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+                <input type="text" id="inlineEditLocInput" value="${loc}" class="flex-1 bg-white dark:bg-slate-900 border border-slate-700 rounded px-2.5 py-1 text-xs text-slate-900 dark:text-white" />
+                <button type="button" data-save-edit-loc="${loc}" class="px-2.5 py-1 rounded bg-blue-600 text-white font-bold text-xs">Salvar</button>
+                <button type="button" data-cancel-edit-loc class="px-2 py-1 rounded border border-slate-700 text-slate-300 text-xs">Cancelar</button>
+              </div>
+            `;
+          }
+
+          if (confirmingDeleteLocationName === loc) {
+            return `
+              <div class="p-2.5 bg-rose-500/10 border border-rose-500/30 rounded-lg space-y-1.5 text-xs">
+                <div class="text-rose-400 font-semibold">Excluir local "${loc}"? ${count > 0 ? `(${count} materiais serão movidos p/ outro local)` : ''}</div>
+                <div class="flex gap-2">
+                  <button type="button" data-confirm-delete-loc="${loc}" class="px-2.5 py-1 rounded bg-rose-600 text-white font-bold text-xs">Confirmar Exclusão</button>
+                  <button type="button" data-cancel-delete-loc class="px-2 py-1 rounded border border-slate-700 text-slate-300 text-xs">Cancelar</button>
+                </div>
+              </div>
+            `;
+          }
+
+          return `
+            <div class="px-3.5 py-2.5 flex items-center justify-between text-xs hover:bg-slate-50 dark:hover:bg-slate-900/40 transition">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                <span class="font-bold text-slate-800 dark:text-slate-200">${loc}</span>
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-mono-code bg-slate-500/15 text-slate-400">${count} materiais</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <button type="button" data-edit-location="${loc}" class="p-1.5 rounded text-slate-400 hover:text-white hover:bg-slate-800" title="Renomear local">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </button>
+                <button type="button" data-delete-location="${loc}" class="p-1.5 rounded text-slate-400 hover:text-rose-400 hover:bg-rose-500/10" title="Excluir local">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      function addLocation(name) {
+        const clean = (name || '').trim();
+        if (!clean) {
+          showToast('Informe o nome do novo local.');
+          return false;
+        }
+        if (db.locations.some(l => l.toLowerCase() === clean.toLowerCase())) {
+          showToast('Já existe um local com esse nome.');
+          return false;
+        }
+        db.locations.push(clean);
+        addLog('LOCAL ADICIONADO', `Local "${clean}" adicionado na seção`);
+        saveDatabase();
+        renderLocationSelects();
+        renderAll();
+        showToast(`Local "${clean}" cadastrado!`);
+        return true;
+      }
+
+      function editLocation(oldName, newName) {
+        const cleanNew = (newName || '').trim();
+        if (!cleanNew) {
+          showToast('O nome do local não pode ficar em branco.');
+          return;
+        }
+        if (oldName.toLowerCase() !== cleanNew.toLowerCase() && db.locations.some(l => l.toLowerCase() === cleanNew.toLowerCase())) {
+          showToast('Já existe outro local com esse nome.');
+          return;
+        }
+        const idx = db.locations.indexOf(oldName);
+        if (idx !== -1) db.locations[idx] = cleanNew;
+        let count = 0;
+        db.items.forEach(it => {
+          if (it.location === oldName) {
+            it.location = cleanNew;
+            count++;
+          }
+        });
+        addLog('LOCAL RENOMEADO', `Local "${oldName}" renomeado para "${cleanNew}" (${count} itens atualizados)`);
+        saveDatabase();
+        renderLocationSelects();
+        renderAll();
+        showToast(`Local alterado para "${cleanNew}"!`);
+      }
+
+      function deleteLocation(locName) {
+        if (db.locations.length <= 1) {
+          showToast('É necessário manter ao menos 1 local cadastrado.');
+          return;
+        }
+        const fallback = db.locations.find(l => l !== locName) || 'Armário Tático 01';
+        let movedCount = 0;
+        db.items.forEach(i => {
+          if ((i.location || 'Seção') === locName) {
+            i.location = fallback;
+            movedCount++;
+          }
+        });
+        db.locations = db.locations.filter(l => l !== locName);
+        addLog('LOCAL EXCLUÍDO', `Local "${locName}" removido (${movedCount} itens movidos para "${fallback}")`);
+        saveDatabase();
+        confirmingDeleteLocationName = null;
+        editingLocationName = null;
+        renderLocationSelects();
+        renderAll();
+        showToast(`Local "${locName}" excluído.`);
+      }
+
+      function openManageLocationsModal() {
+        renderLocationsManagerList();
+        const m = document.getElementById('modalManageLocations');
+        if (m) {
+          m.classList.remove('hidden');
+          m.classList.add('flex');
+          const inp = document.getElementById('inputNewLocationName');
+          if (inp) {
+            inp.value = '';
+            setTimeout(() => inp.focus(), 60);
+          }
+        }
+      }
+
+      // ==========================================
+      // BATE-ESTANTE (AUDITORIA FÍSICA NFC) LOGIC
+      // ==========================================
+      let auditActiveFilter = 'ALL';
+
+      function renderAuditoriaTab() {
+        const locSel = document.getElementById('auditLocationSelectMain');
+        const cardsEl = document.getElementById('auditCardsList');
+        if (!locSel || !cardsEl) return;
+        const loc = locSel.value || 'ALL';
+        const expected = db.items.filter(i => loc === 'ALL' || (i.location || 'Seção') === loc);
+        
+        let verifiedCount = 0;
+        let justifiedCount = 0;
+        let missingCount = 0;
+
+        expected.forEach(it => {
+          if (auditedShelfCodes.has(it.code)) verifiedCount++;
+          else if (it.status !== 'DISPONIVEL') justifiedCount++;
+          else missingCount++;
+        });
+
+        const locCountEl = document.getElementById('auditSelectedLocCount');
+        if (locCountEl) locCountEl.textContent = `${expected.length} materiais cadastrados nesta alocação`;
+        
+        const bV = document.getElementById('auditBigCountVerified');
+        const bJ = document.getElementById('auditBigCountJustified');
+        const bM = document.getElementById('auditBigCountMissing');
+        if (bV) bV.textContent = verifiedCount;
+        if (bJ) bJ.textContent = justifiedCount;
+        if (bM) bM.textContent = missingCount;
+
+        const pA = document.getElementById('pillCountAll');
+        const pM = document.getElementById('pillCountMissing');
+        const pV = document.getElementById('pillCountVerified');
+        const pJ = document.getElementById('pillCountJustified');
+        if (pA) pA.textContent = expected.length;
+        if (pM) pM.textContent = missingCount;
+        if (pV) pV.textContent = verifiedCount;
+        if (pJ) pJ.textContent = justifiedCount;
+
+        document.querySelectorAll('.audit-filter-pill').forEach(btn => {
+          const isA = btn.getAttribute('data-audit-filter') === auditActiveFilter;
+          btn.className = isA
+            ? 'audit-filter-pill px-3 py-1.5 rounded-md text-xs font-semibold bg-blue-600 text-white transition'
+            : 'audit-filter-pill px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition';
+        });
+
+        let displayItems = expected.filter(it => {
+          const isVer = auditedShelfCodes.has(it.code);
+          const isJust = !isVer && it.status !== 'DISPONIVEL';
+          const isMiss = !isVer && it.status === 'DISPONIVEL';
+          if (auditActiveFilter === 'MISSING') return isMiss;
+          if (auditActiveFilter === 'VERIFIED') return isVer;
+          if (auditActiveFilter === 'JUSTIFIED') return isJust;
+          return true;
+        });
+
+        if (displayItems.length === 0) {
+          cardsEl.innerHTML = `
+            <div class="py-12 px-4 text-center space-y-2">
+              <div class="text-xs font-semibold text-slate-300">Nenhum equipamento neste filtro.</div>
+              <p class="text-[11px] text-slate-500">Toque em "TOCAR TAG NFC NA ESTANTE" ou selecione outra prateleira acima.</p>
+            </div>
+          `;
+          return;
+        }
+
+        cardsEl.innerHTML = displayItems.map(it => {
+          const isVer = auditedShelfCodes.has(it.code);
+          const isJust = !isVer && it.status !== 'DISPONIVEL';
+          let statusBadge = `<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-rose-500/15 text-rose-400 border border-rose-500/30"><span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>PENDENTE NA ESTANTE</span>`;
+          if (isVer) {
+            statusBadge = `<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>CONFERIDO VIA NFC</span>`;
+          } else if (isJust) {
+            const reason = it.status === 'EM_CAUTELA' ? `EM MISSÃO (${it.holder || ''})` : `EM MANUTENÇÃO`;
+            statusBadge = `<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono-code font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>${reason}</span>`;
+          }
+
+          return `
+            <div class="p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs hover:bg-slate-50/60 dark:hover:bg-slate-900/40 transition">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono-code font-bold text-sm text-slate-900 dark:text-white">${it.code}</span>
+                  <span class="text-slate-400">·</span>
+                  <span class="font-semibold text-slate-800 dark:text-slate-200">${it.category}</span>
+                </div>
+                <div class="text-[11px] text-slate-400 flex flex-wrap items-center gap-2">
+                  <span>${it.model}</span>
+                  <span>•</span>
+                  <span>Série: ${it.serial}</span>
+                  <span>•</span>
+                  <span class="font-mono-code text-blue-400">${it.location || 'Seção'}</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between sm:justify-end gap-2 shrink-0">
+                ${statusBadge}
+                <button type="button" data-toggle-audit="${it.code}" class="px-2.5 py-1.5 rounded text-[11px] font-semibold border ${isVer ? 'border-slate-700 text-slate-400 hover:text-white' : 'border-emerald-500/40 bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500 hover:text-slate-950'} transition">
+                  ${isVer ? 'Desmarcar' : 'Conferir OK'}
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      function markItemAudited(code) {
+        const it = db.items.find(i => i.code.toUpperCase() === code.toUpperCase() || (i.nfcUid && i.nfcUid.toUpperCase() === code.toUpperCase()));
+        if (!it) {
+          showToast(`Registro ${code} não encontrado no inventário.`);
+          return;
+        }
+        auditedShelfCodes.add(it.code);
+        playScannerBeep();
+        if (navigator.vibrate) {
+          try { navigator.vibrate([80, 40, 80]); } catch (e) {}
+        }
+        renderAuditoriaTab();
+        showToast(`Conferido na estante: ${it.code}`);
+      }
+
       function renderAll() {
+        renderLocationSelects();
         renderOperacoesAndRelatorios();
         renderEquipamentos();
         renderStandardizationTable();
         renderScannerTab();
         renderCautelas();
         renderManutencaoAndChecklist();
+        if (activeTab === 'auditoria') renderAuditoriaTab();
       }
 
       document.addEventListener('DOMContentLoaded', () => {
@@ -2517,6 +3181,258 @@
           document.getElementById('quickTacticalInput').value = '';
           openNewCautelaModalWithCodes(codes);
         });
+        const cardBate = document.getElementById('cardQuickBateEstante');
+        if (cardBate) cardBate.addEventListener('click', () => switchTab('auditoria'));
+
+        // Mobile Bottom Navigation Bar listeners
+        document.querySelectorAll('[data-mobile-tab]').forEach(btn => {
+          btn.addEventListener('click', () => switchTab(btn.getAttribute('data-mobile-tab')));
+        });
+        const bMobMenu = document.getElementById('btnBottomMobileMenu');
+        if (bMobMenu) {
+          bMobMenu.addEventListener('click', () => {
+            document.getElementById('mainSidebar').classList.toggle('-translate-x-full');
+            document.getElementById('sidebarBackdrop').classList.toggle('hidden');
+          });
+        }
+
+        // Location Management Modal listeners
+        document.querySelectorAll('.btn-trigger-manage-locations').forEach(b => {
+          b.addEventListener('click', openManageLocationsModal);
+        });
+        const bCloseLocModal = document.getElementById('btnCloseManageLocationsModal');
+        if (bCloseLocModal) bCloseLocModal.addEventListener('click', () => document.getElementById('modalManageLocations').classList.add('hidden'));
+        const bDoneLocModal = document.getElementById('btnDoneManageLocations');
+        if (bDoneLocModal) bDoneLocModal.addEventListener('click', () => document.getElementById('modalManageLocations').classList.add('hidden'));
+
+        const bAddLoc = document.getElementById('btnAddLocationSubmit');
+        const inpNewLoc = document.getElementById('inputNewLocationName');
+        if (bAddLoc && inpNewLoc) {
+          bAddLoc.addEventListener('click', () => {
+            if (addLocation(inpNewLoc.value)) inpNewLoc.value = '';
+          });
+          inpNewLoc.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              if (addLocation(inpNewLoc.value)) inpNewLoc.value = '';
+            }
+          });
+        }
+
+        const locMgrList = document.getElementById('locationsManagerList');
+        if (locMgrList) {
+          locMgrList.addEventListener('click', (e) => {
+            const bEdit = e.target.closest('button[data-edit-location]');
+            if (bEdit) {
+              editingLocationName = bEdit.getAttribute('data-edit-location');
+              confirmingDeleteLocationName = null;
+              renderLocationsManagerList();
+              const inp = document.getElementById('inlineEditLocInput');
+              if (inp) { inp.focus(); inp.select(); }
+              return;
+            }
+            const bSave = e.target.closest('button[data-save-edit-loc]');
+            if (bSave) {
+              const oldName = bSave.getAttribute('data-save-edit-loc');
+              const inp = document.getElementById('inlineEditLocInput');
+              const newName = inp ? inp.value.trim() : '';
+              if (newName && newName !== oldName) {
+                editLocation(oldName, newName);
+              }
+              editingLocationName = null;
+              renderLocationsManagerList();
+              return;
+            }
+            const bCancelEdit = e.target.closest('button[data-cancel-edit-loc]');
+            if (bCancelEdit) {
+              editingLocationName = null;
+              renderLocationsManagerList();
+              return;
+            }
+            const bDel = e.target.closest('button[data-delete-location]');
+            if (bDel) {
+              confirmingDeleteLocationName = bDel.getAttribute('data-delete-location');
+              editingLocationName = null;
+              renderLocationsManagerList();
+              return;
+            }
+            const bConfirmDel = e.target.closest('button[data-confirm-delete-loc]');
+            if (bConfirmDel) {
+              deleteLocation(bConfirmDel.getAttribute('data-confirm-delete-loc'));
+              return;
+            }
+            const bCancelDel = e.target.closest('button[data-cancel-delete-loc]');
+            if (bCancelDel) {
+              confirmingDeleteLocationName = null;
+              renderLocationsManagerList();
+              return;
+            }
+          });
+          locMgrList.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              const inp = document.getElementById('inlineEditLocInput');
+              if (inp && editingLocationName) {
+                const newName = inp.value.trim();
+                if (newName && newName !== editingLocationName) {
+                  editLocation(editingLocationName, newName);
+                }
+                editingLocationName = null;
+                renderLocationsManagerList();
+              }
+            } else if (e.key === 'Escape') {
+              editingLocationName = null;
+              confirmingDeleteLocationName = null;
+              renderLocationsManagerList();
+            }
+          });
+        }
+
+        // Auditoria Bate-Estante View listeners
+        const aLocSelMain = document.getElementById('auditLocationSelectMain');
+        if (aLocSelMain) {
+          aLocSelMain.addEventListener('change', () => {
+            auditedShelfCodes.clear();
+            renderAuditoriaTab();
+          });
+        }
+        const bResetAud = document.getElementById('btnAuditResetNow');
+        if (bResetAud) {
+          bResetAud.addEventListener('click', () => {
+            auditedShelfCodes.clear();
+            renderAuditoriaTab();
+            showToast('Conferência física reiniciada.');
+          });
+        }
+
+        document.querySelectorAll('.audit-filter-pill').forEach(btn => {
+          btn.addEventListener('click', () => {
+            auditActiveFilter = btn.getAttribute('data-audit-filter') || 'ALL';
+            renderAuditoriaTab();
+          });
+        });
+
+        const cardsList = document.getElementById('auditCardsList');
+        if (cardsList) {
+          cardsList.addEventListener('click', (e) => {
+            const bTog = e.target.closest('button[data-toggle-audit]');
+            if (bTog) {
+              const code = bTog.getAttribute('data-toggle-audit');
+              if (auditedShelfCodes.has(code)) {
+                auditedShelfCodes.delete(code);
+                showToast(`Desmarcado: ${code}`);
+              } else {
+                auditedShelfCodes.add(code);
+                playScannerBeep();
+                if (navigator.vibrate) try { navigator.vibrate([80, 40, 80]); } catch (err) {}
+                showToast(`Conferido OK: ${code}`);
+              }
+              renderAuditoriaTab();
+            }
+          });
+        }
+
+        const bBigScan = document.getElementById('btnBigMobileNfcScan');
+        if (bBigScan) {
+          bBigScan.addEventListener('click', async () => {
+            if ('NDEFReader' in window) {
+              try {
+                const ndef = new window.NDEFReader();
+                await ndef.scan();
+                showToast('Leitor NFC ativo: aproxime a traseira do celular das tags NFC...');
+                ndef.onreading = (ev) => {
+                  const dec = new TextDecoder();
+                  let codes = [];
+                  for (const rec of ev.message.records) {
+                    codes = codes.concat(parseAndExpandCodes(dec.decode(rec.data)));
+                  }
+                  if (codes.length === 0 && ev.serialNumber) {
+                    codes = parseAndExpandCodes(ev.serialNumber);
+                  }
+                  if (codes.length > 0) {
+                    codes.forEach(c => auditedShelfCodes.add(c));
+                    playScannerBeep();
+                    if (navigator.vibrate) try { navigator.vibrate([100, 50, 100]); } catch (err) {}
+                    renderAuditoriaTab();
+                    showToast(`Conferido via NFC: ${codes.join(', ')}`);
+                  }
+                };
+                return;
+              } catch (e) {
+                showToast('Aproxime a tag NFC ou utilize a digitação manual abaixo.');
+              }
+            }
+            const loc = aLocSelMain ? aLocSelMain.value : 'ALL';
+            const pending = db.items.filter(i => (loc === 'ALL' || (i.location || 'Seção') === loc) && !auditedShelfCodes.has(i.code) && i.status === 'DISPONIVEL');
+            if (pending.length > 0) {
+              const pick = pending[0];
+              auditedShelfCodes.add(pick.code);
+              playScannerBeep();
+              if (navigator.vibrate) try { navigator.vibrate([80, 40, 80]); } catch (err) {}
+              renderAuditoriaTab();
+              showToast(`Simulação NFC: ${pick.code} conferido`);
+            } else {
+              showToast('Todos os materiais disponíveis desta prateleira já foram conferidos!');
+            }
+          });
+        }
+
+        const inpAuditMan = document.getElementById('auditManualInputBox');
+        const btnAuditMan = document.getElementById('btnAuditManualSubmit');
+        function submitAuditManual() {
+          if (!inpAuditMan) return;
+          const val = inpAuditMan.value.trim();
+          if (!val) return;
+          const codes = parseAndExpandCodes(val);
+          if (codes.length === 0) {
+            showToast(`Código ou serial "${val}" não localizado.`);
+            return;
+          }
+          codes.forEach(c => auditedShelfCodes.add(c));
+          playScannerBeep();
+          if (navigator.vibrate) try { navigator.vibrate([80, 40, 80]); } catch (err) {}
+          inpAuditMan.value = '';
+          renderAuditoriaTab();
+          showToast(`Conferido: ${codes.join(', ')}`);
+        }
+        if (btnAuditMan) btnAuditMan.addEventListener('click', submitAuditManual);
+        if (inpAuditMan) {
+          inpAuditMan.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              submitAuditManual();
+            }
+          });
+        }
+
+        const btnCopyReport = document.getElementById('btnCopyAuditWhatsappReport');
+        if (btnCopyReport) {
+          btnCopyReport.addEventListener('click', () => {
+            const loc = aLocSelMain ? aLocSelMain.value : 'ALL';
+            const expected = db.items.filter(i => loc === 'ALL' || (i.location || 'Seção') === loc);
+            const missing = expected.filter(i => !auditedShelfCodes.has(i.code) && i.status === 'DISPONIVEL');
+            const verified = expected.filter(i => auditedShelfCodes.has(i.code));
+            const justified = expected.filter(i => !auditedShelfCodes.has(i.code) && i.status !== 'DISPONIVEL');
+
+            const msg = [
+              `*3º GDAAE — RELATÓRIO DE BATE-ESTANTE (AUDITORIA FÍSICA)*`,
+              `*Local Conferido:* ${loc === 'ALL' ? 'Toda a Seção' : loc}`,
+              `*Data/Hora:* ${new Date().toLocaleString('pt-BR')}`,
+              `----------------------------------------`,
+              `*Carga Esperada:* ${expected.length} materiais`,
+              `*Conferidos na Estante:* ${verified.length} materiais`,
+              `*Justificados (Missão/OS):* ${justified.length} materiais`,
+              `*FALTANTES / NÃO BIPADOS (${missing.length}):* ${missing.length > 0 ? missing.map(m => m.code + ' (' + m.category + ')').join(', ') : 'NENHUMA FALTA (100% CONFERIDO)'}`
+            ].join('\n');
+
+            try { navigator.clipboard.writeText(msg.replace(/\\n/g, '\n')); } catch (e) {}
+            window.open('https://wa.me/?text=' + encodeURIComponent(msg.replace(/\\n/g, '\n')), '_blank');
+            showToast('Relatório de Bate-Estante copiado e pronto para WhatsApp!');
+          });
+        }
+
+        const fLocEquip = document.getElementById('filterEquipLocation');
+        if (fLocEquip) fLocEquip.addEventListener('change', renderEquipamentos);
+
         document.getElementById('cardQuickNoQrScanner').addEventListener('click', () => { switchTab('scanner'); switchScanSubMode('read'); });
         document.getElementById('cardQuickKitCautela').addEventListener('click', () => openNewCautelaModalWithCodes([]));
         document.getElementById('cardQuickBatchBatteries').addEventListener('click', () => switchTab('equipamentos'));
@@ -2642,7 +3558,17 @@
           if (!btn) return;
           const act = btn.getAttribute('data-action');
           const code = btn.getAttribute('data-code');
-          if (act === 'quick-cautelar-item') {
+          if (act === 'charge-battery') {
+            const it = db.items.find(x => x.code === code);
+            if (it) {
+              it.lastChargedAt = new Date().toLocaleDateString('pt-BR');
+              playScannerBeep();
+              addLog('RECARGA', `Bateria ${it.code} recarregada na bancada`);
+              saveDatabase();
+              renderAll();
+              showToast(`Recarga registrada na bateria ${it.code}`);
+            }
+          } else if (act === 'quick-cautelar-item') {
             selectedCautelaCodes.add(code);
             playScannerBeep();
             openNewCautelaModalWithCodes([code]);
@@ -2948,6 +3874,7 @@
             if (eq) {
               eq.status = 'EM_CAUTELA';
               eq.holder = `${rank ? rank + ' ' : ''}${warName}`;
+              if (eq.category === 'Bateria') eq.cycles = (eq.cycles || 0) + 1;
               itemsList.push({ code: eq.code, category: eq.category, model: eq.model, status: 'ATIVA', withdrawnAt: nowStr, returnedAt: null });
             }
           });
@@ -2967,7 +3894,37 @@
           const act = btn.getAttribute('data-action');
           const nowStr = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit' }) + ' ' + new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
           if (act === 'view-pdf') openPdfModalForCautela(btn.getAttribute('data-id'));
-          else if (act === 'return-single-item') {
+          else if (act === 'whatsapp-cautela') {
+            const c = db.cautelas.find(x => x.id === btn.getAttribute('data-id'));
+            if (!c) return;
+            const pend = c.items.filter(i => i.status !== 'DEVOLVIDA').map(i => i.code).join(', ');
+            const msg = `*3º GDAAE — SEÇÃO DE COMUNICAÇÕES*\n*Termo de Cautela:* ${c.id}\n*Militar:* ${c.rank || ''} ${c.warName}\n*Missão:* ${c.mission}\n*Previsão de Devolução:* ${c.dueDate ? c.dueDate.split('-').reverse().join('/') : 'Imediata pós-missão'}\n*Equipamentos Pendentes (${c.items.filter(i => i.status !== 'DEVOLVIDA').length}):* ${pend || 'Todos restituídos'}`;
+            try { navigator.clipboard.writeText(msg.replace(/\\n/g, '\n')); } catch (err) {}
+            window.open('https://wa.me/?text=' + encodeURIComponent(msg.replace(/\\n/g, '\n')), '_blank');
+            showToast('Resumo da cautela copiado e pronto para envio no WhatsApp.');
+          } else if (act === 'return-damaged-item') {
+            const c = db.cautelas.find(x => x.id === btn.getAttribute('data-cautela'));
+            const it = c && c.items[parseInt(btn.getAttribute('data-idx'), 10)];
+            if (!it) return;
+            it.status = 'DEVOLVIDA';
+            it.returnedAt = nowStr;
+            const eq = db.items.find(x => x.code === it.code);
+            if (eq) { eq.status = 'MANUTENCAO'; eq.holder = null; }
+            if (c.items.every(x => x.status === 'DEVOLVIDA')) { c.status = 'DEVOLVIDA'; c.returnedAt = nowStr; }
+            db.maintenanceOrders.unshift({
+              id: 'OS-' + String(db.maintenanceOrders.length + 1).padStart(3, '0'),
+              equipCode: it.code,
+              equipModel: it.model || it.category,
+              description: `Avaria reportada no retorno da cautela ${c.id} (${c.rank || ''} ${c.warName})`,
+              priority: 'ALTA',
+              status: 'ABERTA',
+              createdAt: new Date().toLocaleDateString('pt-BR'),
+              author: 'Retorno de Missão'
+            });
+            addLog('AVARIA NO RETORNO', `${it.code} baixado direto para Manutenção após retorno da cautela ${c.id}`);
+            saveDatabase(); renderAll();
+            showToast(`${it.code} recebido e encaminhado para Manutenção (OS aberta).`);
+          } else if (act === 'return-single-item') {
             const c = db.cautelas.find(x => x.id === btn.getAttribute('data-cautela'));
             const it = c && c.items[parseInt(btn.getAttribute('data-idx'), 10)];
             if (!it) return;
@@ -3212,10 +4169,167 @@
           document.getElementById('inputSupabaseKey').value = db.supabaseKey || '';
           pullFromSupabaseCloud();
         }
+        // Shelf Audit listeners
+        const auditLocSel = document.getElementById('auditLocationSelect');
+        if (auditLocSel) auditLocSel.addEventListener('change', renderShelfAudit);
+        const btnResetAudit = document.getElementById('btnResetShelfAudit');
+        if (btnResetAudit) btnResetAudit.addEventListener('click', () => {
+          auditedShelfCodes.clear();
+          renderShelfAudit();
+          showToast('Conferência de estante reiniciada.');
+        });
+        function markItemAuditedByToken(token) {
+          const codes = parseAndExpandCodes(token);
+          if (codes.length === 0) {
+            showToast('Tag ou código não localizado no inventário.');
+            return;
+          }
+          codes.forEach(c => auditedShelfCodes.add(c));
+          playScannerBeep();
+          renderShelfAudit();
+          showToast(`Conferido na estante: ${codes.join(', ')}`);
+        }
+        const auditInp = document.getElementById('auditFastScanInput');
+        if (auditInp) {
+          auditInp.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && auditInp.value.trim()) {
+              e.preventDefault();
+              markItemAuditedByToken(auditInp.value.trim());
+              auditInp.value = '';
+            }
+          });
+        }
+        const btnAuditTap = document.getElementById('btnAuditNfcTapNow');
+        if (btnAuditTap) {
+          btnAuditTap.addEventListener('click', async () => {
+            if (auditInp && auditInp.value.trim()) {
+              markItemAuditedByToken(auditInp.value.trim());
+              auditInp.value = '';
+              return;
+            }
+            if ('NDEFReader' in window) {
+              try {
+                const ndef = new window.NDEFReader();
+                await ndef.scan();
+                showToast('Auditoria NFC ativa: aproxime o celular de cada equipamento na prateleira...');
+                ndef.onreading = (ev) => {
+                  const dec = new TextDecoder();
+                  for (const rec of ev.message.records) markItemAuditedByToken(dec.decode(rec.data));
+                  if (ev.serialNumber) markItemAuditedByToken(ev.serialNumber);
+                };
+                return;
+              } catch (e) {}
+            }
+            const loc = auditLocSel ? auditLocSel.value : 'ALL';
+            const nextUnchecked = db.items.find(i => (loc === 'ALL' || (i.location || 'Seção') === loc) && !auditedShelfCodes.has(i.code));
+            if (nextUnchecked) markItemAuditedByToken(nextUnchecked.code);
+            else showToast('Todos os equipamentos desta estante já foram conferidos.');
+          });
+        }
+        const auditListEl = document.getElementById('auditItemsListContainer');
+        if (auditListEl) {
+          auditListEl.addEventListener('click', (e) => {
+            const b = e.target.closest('button[data-audit-mark]');
+            if (b) markItemAuditedByToken(b.getAttribute('data-audit-mark'));
+          });
+        }
+
+        // Shift Handover / Parte Diária button
+        const btnShift = document.getElementById('btnCopyShiftHandover');
+        if (btnShift) {
+          btnShift.addEventListener('click', () => {
+            const total = db.items.length;
+            const avail = db.items.filter(i => i.status === 'DISPONIVEL').length;
+            const inUse = db.items.filter(i => i.status === 'EM_CAUTELA').length;
+            const maint = db.items.filter(i => i.status === 'MANUTENCAO').length;
+            const activeCaus = db.cautelas.filter(c => c.status === 'ATIVA');
+            const openOss = db.maintenanceOrders.filter(o => o.status === 'ABERTA');
+            const summary = [
+              'PARTE DIÁRIA / PASSAGEM DE CARGA — SEÇÃO DE COMUNICAÇÕES (3º GDAAE)',
+              'Data/Hora: ' + new Date().toLocaleString('pt-BR'),
+              '----------------------------------------',
+              `Carga Total: ${total} | Disponíveis: ${avail} | Em Missão: ${inUse} | Manutenção: ${maint}`,
+              `Cautelas Ativas (${activeCaus.length}): ` + (activeCaus.length ? activeCaus.map(c => `${c.id} (${c.rank || ''} ${c.warName} - ${c.items.filter(x => x.status !== 'DEVOLVIDA').length} itens)`).join('; ') : 'Nenhuma'),
+              `Ordens Técnicas Abertas (${openOss.length}): ` + (openOss.length ? openOss.map(o => `${o.equipCode} (${o.description})`).join('; ') : 'Nenhuma')
+            ].join('\n');
+            try { navigator.clipboard.writeText(summary); } catch (e) {}
+            showToast('Parte Diária de Passagem de Serviço copiada para a área de transferência!');
+          });
+        }
+
+        // Global Hardware USB NFC Reader Wedge & Keyboard Shortcuts
+        let wedgeBuffer = '';
+        let wedgeLastTime = 0;
+        window.addEventListener('keydown', (e) => {
+          if (e.altKey && e.key.toLowerCase() === 'n') {
+            e.preventDefault();
+            openNewCautelaModalWithCodes([]);
+            return;
+          }
+          if (e.altKey && e.key.toLowerCase() === 'c') {
+            e.preventDefault();
+            switchTab('scanner');
+            switchScanSubMode('register');
+            return;
+          }
+          const tag = (e.target && e.target.tagName) ? e.target.tagName.toUpperCase() : '';
+          if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+          const now = Date.now();
+          if (now - wedgeLastTime > 120) wedgeBuffer = '';
+          wedgeLastTime = now;
+          if (e.key === 'Enter' && wedgeBuffer.length >= 3) {
+            const token = wedgeBuffer.trim();
+            wedgeBuffer = '';
+            const codes = parseAndExpandCodes(token);
+            if (codes.length > 0) {
+              if (!document.getElementById('modalNewCautela').classList.contains('hidden')) {
+                codes.forEach(c => selectedCautelaCodes.add(c));
+                playScannerBeep();
+                renderSelectedCautelaItemsList();
+                renderIndividualMatrixInModal();
+                showToast(`Leitor NFC USB: ${codes.join(', ')} incluído na cautela`);
+              } else {
+                addIndividualItemToLiveBasket(codes[0], 'Leitor NFC USB');
+                showToast(`Leitor NFC USB: ${codes[0]} selecionado`);
+              }
+            }
+          } else if (e.key.length === 1) {
+            wedgeBuffer += e.key;
+          }
+        });
+
         switchTab('campo');
         handleHashDeepLinkScan();
       });
     })();
   </script>
+
+  <!-- MOBILE BOTTOM NAVIGATION (OPTIMIZED FOR ONE-HANDED SMARTPHONE USE) -->
+  <nav id="mobileBottomNav" class="lg:hidden fixed bottom-0 inset-x-0 h-14 bg-white/95 dark:bg-[#090E1A]/95 border-t border-slate-200 dark:border-slate-800 backdrop-blur-md z-30 flex items-center justify-around px-1 no-print shadow-lg">
+    <button type="button" data-mobile-tab="campo" class="flex-1 py-1 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-blue-500 transition">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <span class="text-[10px] font-semibold mt-0.5">Campo</span>
+    </button>
+    <button type="button" data-mobile-tab="cautelas" class="flex-1 py-1 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-blue-500 transition">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      <span class="text-[10px] font-semibold mt-0.5">Cautelas</span>
+    </button>
+    <button type="button" data-mobile-tab="auditoria" class="flex-1 py-1 flex flex-col items-center justify-center text-emerald-500 dark:text-emerald-400 font-bold transition">
+      <div class="relative">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 absolute -top-0.5 -right-0.5"></span>
+      </div>
+      <span class="text-[10px] font-bold mt-0.5">Bate-Estante</span>
+    </button>
+    <button type="button" data-mobile-tab="equipamentos" class="flex-1 py-1 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-blue-500 transition">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+      <span class="text-[10px] font-semibold mt-0.5">Inventário</span>
+    </button>
+    <button type="button" id="btnBottomMobileMenu" class="flex-1 py-1 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-blue-500 transition">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <span class="text-[10px] font-semibold mt-0.5">Menu</span>
+    </button>
+  </nav>
+
 </body>
 </html>
