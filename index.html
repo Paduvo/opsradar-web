@@ -162,58 +162,55 @@
 </head>
 <body class="bg-slate-100 text-slate-900 dark:bg-[#060911] dark:text-slate-100 h-screen overflow-hidden flex flex-col selection:bg-blue-600 selection:text-white transition-colors duration-200">
 
-  <!-- TOP ENTERPRISE COMMAND BAR -->
+  <!-- TOP ENTERPRISE COMMAND BAR (RESPONSIVE & MOBILE-POLISHED) -->
   <header class="h-14 shrink-0 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-[#090E1A]/95 backdrop-blur-md z-30 no-print">
-    <div class="h-full px-4 sm:px-6 flex items-center justify-between gap-3">
+    <div class="h-full px-3 sm:px-6 flex items-center justify-between gap-2 sm:gap-3 overflow-hidden">
       <!-- Left: Mobile Drawer Toggle + Brand Identity -->
-      <div class="flex items-center gap-3">
-        <button id="btnMobileSidebarToggle" type="button" class="lg:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300" aria-label="Menu">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <button id="btnMobileSidebarToggle" type="button" class="lg:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Menu">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
 
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-800 to-slate-950 border border-slate-700/80 flex items-center justify-center shadow-inner">
-            <svg id="opsRadarMainSvg" viewBox="0 0 64 64" class="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-slate-800 to-slate-950 border border-slate-700/80 flex items-center justify-center shadow-inner shrink-0">
+            <svg id="opsRadarMainSvg" viewBox="0 0 64 64" class="w-4 h-4 sm:w-5 sm:h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M32 4L56 17.8V46.2L32 60L8 46.2V17.8L32 4Z" stroke="#3B82F6" stroke-width="3.8" fill="#0F172A"/>
               <path d="M21 38C21 31.9249 25.9249 27 32 27C38.0751 27 43 31.9249 43 38" stroke="#3B82F6" stroke-width="3.2" stroke-linecap="round"/>
               <path d="M16 33C16 24.1634 23.1634 17 32 17C40.8366 17 48 24.1634 48 33" stroke="#60A5FA" stroke-width="2.4" stroke-linecap="round"/>
               <path d="M32 32L37 39L32 46L27 39L32 32Z" fill="#10B981"/>
             </svg>
           </div>
-          <div class="flex items-center gap-2.5">
-            <span class="font-extrabold tracking-tight text-sm sm:text-base text-slate-900 dark:text-white uppercase">OpsRadar</span>
-            <span class="hidden md:inline-block h-3.5 w-px bg-slate-300 dark:bg-slate-800"></span>
-            <span class="hidden md:inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono-code font-semibold uppercase tracking-wider bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
-              3º GDAAE • SEÇÃO COM
-            </span>
-          </div>
+          <span class="font-extrabold tracking-tight text-sm sm:text-base text-slate-900 dark:text-white uppercase truncate">OpsRadar</span>
+          <span class="hidden md:inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-mono-code font-semibold uppercase tracking-wider bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+            3º GDAAE • SEÇÃO COM
+          </span>
         </div>
       </div>
 
-      <!-- Right: Enterprise Action Controls -->
-      <div class="flex items-center gap-2">
-        <button id="btnHeaderBasket" type="button" class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 text-slate-700 dark:text-slate-300 hover:border-blue-500/50 transition" title="Equipamentos pré-selecionados para cautela">
+      <!-- Right: Enterprise Action Controls (Clean, Responsive, No Mobile Overflow) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <button id="btnHeaderBasket" type="button" class="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 text-slate-700 dark:text-slate-300 hover:border-blue-500/50 transition" title="Equipamentos pré-selecionados">
           <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
           <span class="hidden sm:inline">Seleção</span>
           <span id="headerBasketCount" class="px-1.5 py-0.2 rounded bg-blue-600 text-white font-mono-code font-bold text-[10px]">0</span>
         </button>
 
-        <button id="btnHeaderNewCautela" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-sm transition">
+        <button id="btnHeaderNewCautela" type="button" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-sm transition">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
           <span>Nova Cautela</span>
         </button>
 
-        <button id="btnOperatorSwitch" type="button" class="hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-700 transition" title="Operador em Serviço">
+        <button id="btnOperatorSwitch" type="button" class="hidden lg:flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-700 transition" title="Operador em Serviço">
           <span class="w-4 h-4 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center font-mono-code font-bold text-[9px]" id="activeOperatorInitials">OP</span>
           <span id="activeOperatorName" class="font-mono-code text-[11px]">Operador</span>
         </button>
 
-        <button id="btnHeaderAlertsBell" type="button" class="relative p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 text-slate-500 dark:text-slate-400 hover:text-white transition" title="Central de Alertas">
+        <button id="btnHeaderAlertsBell" type="button" class="hidden sm:flex relative p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 text-slate-500 dark:text-slate-400 hover:text-white transition" title="Central de Alertas">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
           <span id="headerBellDot" class="w-1.5 h-1.5 rounded-full bg-amber-500 absolute top-1.5 right-1.5 hidden"></span>
         </button>
 
-        <button id="btnHeaderLockTerminal" type="button" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 text-slate-500 dark:text-slate-400 hover:text-white transition" title="Bloquear Terminal">
+        <button id="btnHeaderLockTerminal" type="button" class="hidden sm:flex p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80 text-slate-500 dark:text-slate-400 hover:text-white transition" title="Bloquear Terminal">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4"/></svg>
         </button>
 
@@ -422,22 +419,25 @@
           <!-- Operational Action Modules (Optimized for Mobile) -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <!-- Dedicated Mobile Bate-Estante / Auditoria Card -->
-            <button type="button" id="cardQuickBateEstante" class="enterprise-card text-left group rounded-xl border border-emerald-500/40 hover:border-emerald-400 p-4 sm:p-5 flex items-start justify-between gap-4 transition col-span-1 sm:col-span-2 bg-gradient-to-r from-emerald-950/25 via-slate-900/60 to-slate-900/80 shadow-sm">
+            <button type="button" id="cardQuickBateEstante" class="enterprise-card text-left group rounded-xl border border-emerald-500/40 hover:border-emerald-400 p-4 sm:p-5 flex items-start justify-between gap-3 transition col-span-1 sm:col-span-2 bg-gradient-to-r from-emerald-950/25 via-slate-900/60 to-slate-900/80 shadow-sm">
               <div class="flex items-start gap-3.5">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition shadow-inner">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition shadow-inner">
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 </div>
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
-                    <h2 class="text-sm font-extrabold text-slate-900 dark:text-white">Bate-Estante & Auditoria Física NFC</h2>
+                    <h2 class="text-sm font-extrabold text-slate-900 dark:text-white">Bate-Estante & Auditoria NFC</h2>
                     <span class="px-1.5 py-0.5 rounded text-[9px] font-mono-code font-bold uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">Modo Celular</span>
                   </div>
                   <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Conferência física de carga por prateleira ou armário: encoste o celular nos equipamentos para identificar faltas e extravios na hora.</p>
                 </div>
               </div>
-              <span class="hidden sm:inline-flex px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 group-hover:bg-emerald-500 group-hover:text-slate-950 transition whitespace-nowrap mt-1">
-                Abrir Auditoria →
-              </span>
+              <div class="flex items-center gap-1 shrink-0 mt-1">
+                <span class="hidden sm:inline-flex px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 group-hover:bg-emerald-500 group-hover:text-slate-950 transition whitespace-nowrap">
+                  Abrir Auditoria →
+                </span>
+                <svg class="w-4 h-4 text-emerald-400 group-hover:translate-x-0.5 transition shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </div>
             </button>
             <!-- Module 1: Cadastro com Leitura NFC -->
             <button type="button" id="cardQuickContinuousRegister" class="enterprise-card text-left group rounded-xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/60 p-5 flex items-start justify-between gap-4 transition">
@@ -785,17 +785,17 @@
               <h1 class="text-2xl font-extrabold tracking-tight">Central de Cadastro NFC & Leitura</h1>
             </div>
 
-            <div class="inline-flex p-1 rounded-lg bg-white dark:bg-[#0D1322] border border-slate-200 dark:border-slate-800">
-              <button type="button" data-scan-mode="register" class="scan-mode-btn px-3 py-1.5 rounded-md text-xs font-semibold bg-blue-600 text-white transition">
+            <div class="grid grid-cols-2 sm:flex p-1 rounded-lg bg-white dark:bg-[#0D1322] border border-slate-200 dark:border-slate-800 gap-1 w-full sm:w-auto">
+              <button type="button" data-scan-mode="register" class="scan-mode-btn text-center px-3 py-2 rounded-md text-xs font-semibold bg-blue-600 text-white transition">
                 Cadastrar via NFC
               </button>
-              <button type="button" data-scan-mode="read" class="scan-mode-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">
+              <button type="button" data-scan-mode="read" class="scan-mode-btn text-center px-3 py-2 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">
                 Leitor de Campo
               </button>
-              <button type="button" data-scan-mode="write" class="scan-mode-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">
+              <button type="button" data-scan-mode="write" class="scan-mode-btn text-center px-3 py-2 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">
                 Fila de Gravação
               </button>
-              <button type="button" data-scan-mode="audit" class="scan-mode-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">
+              <button type="button" data-scan-mode="audit" class="scan-mode-btn text-center px-3 py-2 rounded-md text-xs font-semibold text-slate-400 hover:text-white transition">
                 Auditoria de Estante
               </button>
             </div>
@@ -924,9 +924,9 @@
                     <span class="text-xs font-bold uppercase tracking-wider font-mono-code text-slate-400">Seleção Direta de Equipamento</span>
                     <span id="nfcStatusBadge" class="text-[11px] font-mono-code text-emerald-400">13.56 MHz Ativo</span>
                   </div>
-                  <div class="flex gap-2">
-                    <select id="nfcTargetEquipSelect" class="flex-1 bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2 text-xs font-mono-code"></select>
-                    <button type="button" id="btnSimulateNfcTap" class="px-3.5 py-2 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white whitespace-nowrap">
+                  <div class="flex flex-col sm:flex-row gap-2">
+                    <select id="nfcTargetEquipSelect" class="w-full sm:flex-1 min-w-0 bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2.5 text-xs font-mono-code truncate"></select>
+                    <button type="button" id="btnSimulateNfcTap" class="w-full sm:w-auto px-4 py-2.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white whitespace-nowrap shrink-0 transition">
                       Incluir Item
                     </button>
                     <button type="button" id="btnWriteNfcTag" class="hidden"></button>
@@ -1107,10 +1107,10 @@
               <label class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono-code">Prateleira ou Armário a Conferir:</label>
               <span id="auditSelectedLocCount" class="text-xs font-mono-code text-blue-400">0 itens cadastrados nesta alocação</span>
             </div>
-            <div class="flex gap-2">
-              <select id="auditLocationSelectMain" class="flex-1 bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2.5 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500">
+            <div class="flex flex-col sm:flex-row gap-2">
+              <select id="auditLocationSelectMain" class="w-full sm:flex-1 min-w-0 bg-slate-50 dark:bg-[#080C14] border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-2.5 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 truncate">
               </select>
-              <button type="button" class="btn-trigger-manage-locations px-3 py-2.5 rounded-lg text-xs font-bold bg-blue-600/15 border border-blue-500/30 text-blue-400 hover:bg-blue-600 hover:text-white transition whitespace-nowrap">
+              <button type="button" class="btn-trigger-manage-locations w-full sm:w-auto px-4 py-2.5 rounded-lg text-xs font-bold bg-blue-600/15 border border-blue-500/30 text-blue-400 hover:bg-blue-600 hover:text-white transition whitespace-nowrap shrink-0">
                 + Novo Local
               </button>
             </div>
@@ -4298,14 +4298,26 @@
           }
         });
 
+                // Backdrop click to close modals on mobile
+        ['modalNewCautela', 'modalNewEquip', 'modalManageLocations', 'modalNewOs', 'modalEquipDetail', 'modalBulkImport', 'modalPdfViewer'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.addEventListener('click', (e) => {
+              if (e.target === el) {
+                el.classList.add('hidden');
+                el.classList.remove('flex');
+              }
+            });
+          }
+        });
         switchTab('campo');
         handleHashDeepLinkScan();
       });
     })();
   </script>
 
-  <!-- MOBILE BOTTOM NAVIGATION (OPTIMIZED FOR ONE-HANDED SMARTPHONE USE) -->
-  <nav id="mobileBottomNav" class="lg:hidden fixed bottom-0 inset-x-0 h-14 bg-white/95 dark:bg-[#090E1A]/95 border-t border-slate-200 dark:border-slate-800 backdrop-blur-md z-30 flex items-center justify-around px-1 no-print shadow-lg">
+  <!-- MOBILE BOTTOM NAVIGATION (OPTIMIZED FOR ONE-HANDED SMARTPHONE USE WITH IPHONE SAFE AREA) -->
+  <nav id="mobileBottomNav" class="lg:hidden fixed bottom-0 inset-x-0 bg-white/95 dark:bg-[#090E1A]/95 border-t border-slate-200 dark:border-slate-800 backdrop-blur-md z-30 flex items-center justify-around px-1 no-print shadow-lg h-[calc(3.5rem+env(safe-area-inset-bottom,0px))] pb-[env(safe-area-inset-bottom,0px)]">
     <button type="button" data-mobile-tab="campo" class="flex-1 py-1 flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-blue-500 transition">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
       <span class="text-[10px] font-semibold mt-0.5">Campo</span>
